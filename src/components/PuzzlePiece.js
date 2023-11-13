@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDrag } from 'react-dnd';
 
-const PuzzlePiece = ({ id, size, x, y, onDropPiece, src, onDrag }) => {
+const PuzzlePiece = ({ id, size, x, y, src, onDrag }) => {
     const [position, setPosition] = useState({ x, y }); // Initial position
     const [{ isDragging }, drag] = useDrag({
         type: 'piece',
@@ -23,7 +23,6 @@ const PuzzlePiece = ({ id, size, x, y, onDropPiece, src, onDrag }) => {
                         y: Math.round(item.initialPosition.y + delta.y),
                     };
                     setPosition(newPosition); // Update position state
-                    onDropPiece(id, newPosition);
                 }
             }
         },
