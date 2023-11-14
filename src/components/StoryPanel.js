@@ -1,7 +1,6 @@
 // This data would typically be fetched from a server or imported from another file
-import Piece1 from '../images/kaini.jpg';
-import Piece2 from '../images/kaini2.jpg';
-import Piece3 from '../images/kaini3.jpg';
+import Piece1 from '../images/kaini.png';
+import Piece3 from '../images/kaini3.png';
 const storyPanelsData = [
     {
         id: '1',

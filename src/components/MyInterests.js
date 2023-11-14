@@ -1,15 +1,10 @@
 import React from 'react';
-import Piece1 from '../images/trip.jpg';
-import Piece2 from '../images/hiking.jpg';
-import Piece3 from '../images/cook.jpg';
-import Piece4 from '../images/dog.jpg';
-import Piece5 from '../images/hair.jpg';
-import Click from '../images/click.png';
-import Tap from '../images/tap.png';
+import Piece2 from '../images/kaini.png';
+
 const MyInterests = () => (
     <div >
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <img src={Piece1} className="h-60 my-4 mx-auto block md:mx-0" />
+            <img src={Piece2} className="h-60 my-4 mx-auto block md:mx-0" />
             <div className="w-96 h-60 p-8 my-4 bg-white bg-opacity-80 md:mx-0 mx-auto block ">
                 <h3 className='font-bold text-xl mb-4 text-center'> Pets</h3>
                 <h3 className='font-semibold'> "I love pur babys both dogs and cats! <br /> If I don't control myself,<br /> I might look like an insane pet thief!"</h3>
