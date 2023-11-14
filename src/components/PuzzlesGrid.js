@@ -10,7 +10,7 @@ const PuzzlesGrid = ({ onPiecePlaced, size,correctPlacements }) => {
     console.log("puzzle grid size: ", size);
 
     return (
-        <div className='grid grid-cols-3 border-double border-2 ' style={{ width: '390px', height: '390px' }}>
+        <div className='grid grid-cols-3 mt-3' style={{ width: '390px', height: '390px' }}>
             {
             [...Array(9)].map((_, index) => {
                 const pieceId = index + 1;
@@ -24,7 +24,7 @@ const PuzzlesGrid = ({ onPiecePlaced, size,correctPlacements }) => {
                 >
                     {isPlaced ?
                         <ResultPuzzle pieceId={pieceId}/> :
-                        <p className="flex justify-center items-center h-full m-0 text-slate-400">+</p>
+                        <p className="flex justify-center items-center h-full m-0 text-slate-400 text-xl">+</p>
                     }
                 </DropTarget>
             )})}

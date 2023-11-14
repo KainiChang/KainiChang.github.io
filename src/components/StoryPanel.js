@@ -69,14 +69,14 @@ const StoryPanel = ({ panelId,close }) => {
         return null; // or some fallback UI
     }
     return (
-        <div className="fixed  inset-0 bg-white bg-opacity-75 flex justify-center items-center">
-            <div className="bg-white md:max-w-3xl p-4 rounded-lg shadow-lg text-center">
+        <div className="fixed inset-0 bg-white bg-opacity-75 flex justify-center items-center">
+            <div className="bg-white w-96 md:max-w-3xl p-4 rounded-lg shadow-lg text-center">
             {/* {panelData.imgSrc && <img src={panelData.imgSrc} alt={`Story panel ${panelId}`} className="w-full h-60 mb-4" />} */}
                 <h3 className="text-2xl font-bold mb-2">{panelData.title}</h3>
-                <p className='text-xl'>{panelData.description}</p>
+                <p className='text-xl text-left'>{panelData.description}</p>
                 <button
                     onClick={() => {close()}}
-                    className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
+                    className="mt-4 px-4 py-2 bg-lime-500 text-white rounded hover:bg-lime-400 transition duration-300"
                 >
                     Close
                 </button>

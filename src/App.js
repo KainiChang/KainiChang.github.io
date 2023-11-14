@@ -10,6 +10,8 @@ import { TouchTransition, MouseTransition } from 'react-dnd-multi-backend';
 import PuzzlesGrid from './components/PuzzlesGrid';
 import MyWordCloud from './components/MyWordCloud';
 import MyInterests from './components/MyInterests';
+import Reload from './images/reload.png';
+
 const HTML5toTouch = {
   backends: [
     {
@@ -87,26 +89,25 @@ function App() {
   return (
     <div className="App">
       <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
-        <div className='text-center p-4 md:max-w-5xl mx-4'>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mt-2 mb-4">
-            Hello friend, I'm Kaini! A happy life boxer!
-          </h1 >
-          <h3 className="text-2xl md:text-3xl  italic text-gray-600 mt-2 mb-4">
-            Thank you for taking the time to delve into my story.<br /> Our meeting here, even in the digital realm,<br />may seem like a chance encounter at this intersection,<br /> but beneath the surface, we are more than meets the eye.
-          </h3>
-          <p className='mt-2 mb-4'>
-            By placing every puzzle, a story of me will be presented!
-          </p>
-          <div className='mx-auto bg-white p-5 rounded-md md:flex items-center justify-center'>
+        <div className='md:max-w-5xl'>
+          <h1 className="text-4xl italic font-handlee md:text-5xl font-bold text-gray-800 my-6">
+            Hello friend, I'm Kaini!
+          </h1 ></div></div>
+      <div className="flex items-center justify-center bg-lime-250 bg-opacity-30 p-8">
+        <div className='md:max-w-5xl'>
+          <h3 className=" text-center text-2xl md:text-3xl text-gray-600 my-4">
+            My stories are behind the puzzles:</h3>
+
+          <div className='mx-auto p-5 rounded-md md:flex items-center justify-center'>
             <div className="flex flex-1 p-4 justify-center items-center">
               <DndProvider backend={MultiBackend} options={HTML5toTouch}>
                 {!isCompleted ? (
                   <Puzzle onDrag={onDrag} correctPlacements={correctPlacements} />) : (
                   <button
-                    className="bg-white text-gray w-96 h-96  py-2 px-4 rounded"
+                    className=" text-gray w-96 h-96 py-2 px-4 rounded"
                     onClick={resetGame}
                   >
-                    Click to replay
+                    <img src={Reload} className='w-32 h-32 opacity-50 mx-auto' />
                   </button>
                 )}
               </DndProvider>
@@ -120,30 +121,43 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="items-center justify-center p-8 bg-white bg-opacity-55">
-        <h3 className="text-2xl md:text-3xl   text-gray-800 mt-2 mb-4">
-          My personality is a mix of the following:
+      <div className="text-center py-12 px-2 bg-lime-400 bg-opacity-55 ">
+        <h3 className="text-2xl md:text-3xl text-gray-800 mt-4 mb-6">
+          My personality is a mix like the wordcloud:
         </h3>
-        <MyWordCloud className="md:max-w-5xl items-center justify-center" />
+        <MyWordCloud />
+        <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
+          <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-xl bg-white opacity-50 mx-auto md:mr-2'>
+            <h1 className='font-bold '>Strength</h1>
+            <p className='text-sm'>Clear mind under stress</p>
+            </div>
+            <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-xl bg-white opacity-50 mx-auto md:ml-2'>
+            <h1 className='font-bold '>Weakness</h1>
+            <p className='text-sm'>Clear mind under stress</p>
+
+            </div>
+        </div>
       </div>
-      <div className="items-center justify-center p-8 bg-orange-100 bg-opacity-35">
-        <h3 className="text-2xl md:text-3xl  text-gray-800 mt-2 mb-4">
-          My interests including:
+      <div className=" py-8 px-2">
+        <h3 className="text-2xl md:text-3xl text-gray-800 mt-6 mb-8">
+          My interests include:
         </h3>
-        <p className="  mt-2 mb-4">
-          ordered by favourate level    
-          </p>
         <MyInterests />
       </div>
       <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
         <div className='text-center p-4 md:max-w-5xl mx-4'>
-          <h3 className="text-3xl md:text-4xl  italic text-gray-600 mt-2 mb-4">
-          Much appreciated for your time and effort to know me more!
+          <h3 className="italic font-handlee text-4xl md:text-5xl font-semibold text-gray-800 mt-2 mb-4">
+            Much appreciated for your time and effort to know me more!
           </h3>
-          <h3 className="text-3xl md:text-4xl  italic text-gray-600 mt-2 mb-4">
-Cheers!          </h3>
-          </div>
-          </div>
+          <h3 className="italic font-handlee text-4xl md:text-5xl font-semibold text-gray-800 mt-2 mb-4">
+            Cheers! 
+            </h3>
+        </div>
+      </div>
+      <div className='w-full md:flex items-center justify-center  py-4 px-8 bg-black'>
+            <p className='text-sm text-white mx-auto my-1 md:mr-2 font-semibold'>Designed by Kaini Chang</p>
+            <p className='text-sm text-white mx-auto my-1 md:ml-2  font-semibold'>Developed by Kaini Chang</p>
+            </div>
     </div>
   );
 }

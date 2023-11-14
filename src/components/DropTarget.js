@@ -16,18 +16,31 @@ const DropTarget = ({ children , id , size, onPiecePlaced}) => {
 
         }),
     });
-
+    const getBorderRadius = (id) => {
+        switch (id) {
+          case 1:
+            return '15px 0 0 0'; // Top-left corner rounded
+          case 3:
+            return '0 15px 0 0'; // Top-right corner rounded
+            case 7:
+              return '0 0 0 15px'; // Top-left corner rounded
+            case 9:
+              return '0 0 15px 0'; // Top-right corner rounded
+          default:
+            return '0'; // No corners rounded
+        }
+      };
     const getDropZoneStyle = isOver => ({
         width: size,
         height: size,
         position: 'relative',
-        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  'lightyellow' : 'transparent',
-
+        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  '#ffffcc' : '#f2ffe6',
+        borderRadius: getBorderRadius(id),
     });
 
     return (
         // ref={drop}
-        <div ref={drop} style={getDropZoneStyle(isOver)}>
+        <div ref={drop} style={getDropZoneStyle(isOver) }>
             {/* This area represents where the PuzzlePiece can be dropped */}
             {children}
         </div>
