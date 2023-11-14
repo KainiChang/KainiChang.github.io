@@ -10,9 +10,6 @@
 .App-link {
   color: #61dafb;
 }
-.puzzle-container {
-  @apply flex justify-center  h-96;
-}
 
 @keyframes App-logo-spin {
   from {

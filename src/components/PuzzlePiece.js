@@ -1,8 +1,9 @@
 // PuzzlePiece.js
 import React, { useState } from 'react';
 import { useDrag } from 'react-dnd';
+import ResultPuzzle from './ResultPuzzle';
 
-const PuzzlePiece = ({ id, size, x, y, src, onDrag }) => {
+const PuzzlePiece = ({ id, size, x, y, onDrag }) => {
     const [position, setPosition] = useState({ x, y }); // Initial position
     const [{ isDragging }, drag] = useDrag({
         type: 'piece',
@@ -33,7 +34,7 @@ const PuzzlePiece = ({ id, size, x, y, src, onDrag }) => {
 
     return (
         <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1, width: size, height: size }}>
-            <img src={src} />
+            <ResultPuzzle pieceId={id} />
         </div>
     );
 };
