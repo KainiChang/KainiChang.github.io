@@ -49,7 +49,8 @@ const MyInterests = () => {
                 <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
                     <img className="h-16 w-16 mt-20 mx-auto"  src={Folder}/>
                 <p className='font-bold text-customgreen bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
-                    Download CV
+                    Download CV<br />
+                    (more projects)
                 </p>
                 </div>
             </a>
