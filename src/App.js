@@ -12,21 +12,25 @@ import MyWordCloud from './components/MyWordCloud';
 import MyInterests from './components/MyInterests';
 import Reload from './images/reload.png';
 import notes from './images/notes.png';
-const HTML5toTouch = {
-  backends: [
-    {
-      backend: HTML5Backend,
-      transition: MouseTransition,
-    },
-    {
-      backend: TouchBackend, // You may want to pass options to TouchBackend
-      options: { enableMouseEvents: true }, // Enable if you want to respond to mouse events
-      preview: true,
-      transition: TouchTransition,
-    },
-  ],
-};
+import { isMobile } from 'react-device-detect'; // or use your own mobile detection
 
+// const HTML5toTouch = {
+//   backends: [
+//     {
+//       backend: HTML5Backend,
+//       transition: MouseTransition,
+//     },
+//     {
+//       backend: TouchBackend, // You may want to pass options to TouchBackend
+//       options: { enableMouseEvents: true }, // Enable if you want to respond to mouse events
+//       preview: true,
+//       transition: TouchTransition,
+//     },
+//   ],
+// };
+// const backend = HTML5Backend;
+
+const backend = isMobile ? TouchBackend : HTML5Backend;
 function App() {
 
   const [currentPanel, setCurrentPanel] = React.useState(null);
@@ -58,8 +62,9 @@ function App() {
       console.log("checked correctly placed:", correctPlacements[panelId]);
     }
   }
+  // const size = 100;
 
-  const size = '130px';
+  const size = isMobile? 100:130;
   const closePanel = () => {
     setCurrentPanel(null);
     console.log("current panel:", currentPanel);
@@ -109,29 +114,31 @@ function App() {
         <div className='md:max-w-5xl'>
           <h3 className=" text-center text-2xl md:text-3xl text-gray-800 my-4">
             My stories are behind the puzzles:</h3>
-            <p className='text-customgreen font-bold'>drag & drop</p>
-          <div className='mx-auto rounded-md md:flex items-center justify-center'>
-            <div className="flex flex-1 p-4 justify-center items-center">
-              <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+          {!isCompleted ? (
+            <p className='text-customgreen font-bold'>drag & drop</p>) : (
+            <button
+              className=" text-gray w-6 h-6"
+              onClick={resetGame}>
+              <img src={Reload} className='w-6 h-6 opacity-25 mx-auto' />
+            </button>
+          )}
+                        <DndProvider backend={backend}>
 
-                {!isCompleted ? (
-                  <Puzzle onDrag={onDrag} correctPlacements={correctPlacements} />) : (
-                  <button
-                    className=" text-gray w-96 h-96 py-2 px-4 rounded"
-                    onClick={resetGame}
-                  >
-                    <img src={Reload} className='w-32 h-32 opacity-25 mx-auto' />
-                  </button>
-                )}
-              </DndProvider>
-            </div>
+          <div className='mx-auto rounded-md md:flex items-center justify-center'>
+          {!isCompleted && 
             <div className="flex flex-1 p-4 justify-center items-center">
-              <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+
+                  <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
+            </div>}
+            <div className="flex flex-1 p-4 justify-center items-center">
+              {/* <DndProvider backend={backend}> */}
                 <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-              </DndProvider>
+              {/* </DndProvider> */}
             </div>
             {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
           </div>
+          </DndProvider>
+
         </div>
       </div>
       <div className="text-center py-12 px-2 bg-customlime">
@@ -140,22 +147,22 @@ function App() {
         </h3>
         <MyWordCloud />
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
-          <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:mr-2'>
+          <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:mr-2 opacity-70'>
             <h1 className='font-bold text-gray-800'>Strength</h1>
             <p className='text-sm mt-2'>Keep a clear mind under stress, especially handling logic and numbers</p>
           </div>
-          <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:ml-2'>
+          <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:ml-2 opacity-70'>
             <h1 className='font-bold text-gray-800'>Weakness</h1>
-            <p className='text-sm mt-2'>I perfer relationships that last, not a social butterfly with many casual friends.</p>
+            <p className='text-sm mt-2'>I perfer to build relationships that last, not a social butterfly with many casual friends.</p>
           </div>
         </div>
       </div>
       <div className=" py-8 px-2">
         <div className='flex items-center justify-center'>
           <img src={notes} className='w-12 h-12 mr-4' />
-        <h3 className="text-2xl md:text-3xl text-gray-800 mt-6 mb-8">
-          My interests include:
-        </h3>
+          <h3 className="text-2xl md:text-3xl text-gray-800 mt-6 mb-8">
+            My interests include:
+          </h3>
         </div>
         <MyInterests />
       </div>

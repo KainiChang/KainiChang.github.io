@@ -3,14 +3,14 @@ import React from 'react';
 function NoteSticker({ title, text,size }) {
   const stickerStyle = {
     padding: '10px',
-    backgroundColor: 'yellow',
-    // backgroundColor: '#b1e457',
+    // backgroundColor: 'yellow',
+    backgroundColor: '#fdf1b7',
 whiteSpace: 'pre-line',
     width: size,
     height: size,
     borderRadius: '0px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    fontFamily: '"Comic Sans MS", cursive, sans-serif',
+    fontFamily: 'Handlee,  sans-serif',
     fontSize: '16px',
     lineHeight: '1.5',
     position: 'relative', // For absolutely positioned elements inside

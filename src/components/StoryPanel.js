@@ -9,7 +9,18 @@ const storyPanelsData = [
       title: 'Lucky or Unlucky?',
       description: 'Officers who worked for the government under the One-child policy were waiting for my death. However, my great mom succeeded in giving an early birth. Luckily, I’m so healthy!'
     },
-    // ...
+    {   
+      id: '2',
+      imgSrc: Piece1,
+      title: 'Adult or Not?',
+      description: "I’m pretty sure I’ve become an adult after the loss of my father at 12 years old being mentally strong to manage my life.  \n\nSomehow I feel myself am still a kid at the bottom of my heart, being curious and adventurous."
+    },
+    {
+      id: '3',
+      imgSrc: Piece3,
+      title: 'A Super Star in Study',
+      description: 'Born and grew up at a small village in a rural area usually brings the education resources issue. Being super excellent, I received great education in nearby cities with full scholarships, living in the dormitory of remote schools from 11 years old. \n\nMy life was so different with those I grew up with because of my knowledge. Pursued master of Computing and Innovation in Australia, I achieved high distinction studying in my second language. \n\nDo you think I’m a super star?'
+    },
     {
       id: '4',
       imgSrc: Piece1,
@@ -78,7 +89,7 @@ const StoryPanel = ({ panelId,closePanel }) => {
                 </button> */}
                 <button
     onClick={() => {closePanel()}}
-    className="mt-4 px-8 py-2 focus:bg-lime-500 hover:bg-lime-500 focus:text-white  hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
+    className="mt-4 px-8 py-2 active:bg-lime-500 hover:bg-lime-500 active:text-white hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
 >
     Close
 </button>

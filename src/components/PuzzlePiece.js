@@ -31,12 +31,25 @@ const PuzzlePiece = ({ id, size, x, y, onDrag }) => {
             isDragging: !!monitor.isDragging(),
         }),
     });
-
+    const handleTouchMove = (e) => {
+        const touch = e.targetTouches[0];
+        // Calculate the position based on touch point
+        const newPosition = {
+            x: Math.round(touch.clientX),
+            y: Math.round(touch.clientY),
+        };
+        // Update the position state
+        setPosition(newPosition);
+    };
+    
     return (
-        <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1, width: size, height: size }}>
-            <ResultPuzzle pieceId={id} />
+        <div ref={drag}     onTouchMove={handleTouchMove}
+         style={{ opacity: isDragging ? 0.5 : 1, width: size, height: size }}>
+            <ResultPuzzle pieceId={id} size={size} />
         </div>
     );
 };
 
 export default PuzzlePiece;
+
+

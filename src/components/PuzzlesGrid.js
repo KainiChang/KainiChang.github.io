@@ -5,12 +5,9 @@ import ResultPuzzle from "./ResultPuzzle";
 
 // Inside your Puzzle.js or equivalent grid component
 const PuzzlesGrid = ({ onPiecePlaced, size, onclick,correctPlacements }) => {
-    // Render the drop targets in a grid layout
-    console.log("puzzle grid rendering");
-    console.log("puzzle grid size: ", size);
-
+ const boxSize = 3*size;
     return (
-        <div className='grid grid-cols-3 mt-3' style={{ width: '390px', height: '390px' }}>
+        <div className='grid grid-cols-3 mt-3' style={{ width: boxSize, height: boxSize }}>
             {
             [...Array(9)].map((_, index) => {
                 const pieceId = index + 1;

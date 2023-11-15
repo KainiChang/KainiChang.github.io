@@ -17,6 +17,7 @@ module.exports = {
       colors: {
         'customlime': '#f2ffe6',
         'customgreen':'#b1e457',
+        'customyellow':'#fdf1b7',
       }
     },
 

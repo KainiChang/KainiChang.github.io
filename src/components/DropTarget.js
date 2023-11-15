@@ -3,7 +3,7 @@ import { useDrop } from 'react-dnd';
 
 const DropTarget = ({ children , id , size, onPiecePlaced,onclick}) => {
  
-    console.log("drop zone rendered"); // NOT executing
+    // console.log("drop zone rendered"); // NOT executing
 
     const [{ isOver,draggedItem }, drop] = useDrop({
         accept: 'piece',
@@ -19,13 +19,13 @@ const DropTarget = ({ children , id , size, onPiecePlaced,onclick}) => {
     const getBorderRadius = (id) => {
         switch (id) {
           case 1:
-            return '15px 0 0 0'; // Top-left corner rounded
+            return '20px 0 0 0'; // Top-left corner rounded
           case 3:
-            return '0 15px 0 0'; // Top-right corner rounded
+            return '0 20px 0 0'; // Top-right corner rounded
             case 7:
-              return '0 0 0 15px'; // Top-left corner rounded
+              return '0 0 0 20px'; // Top-left corner rounded
             case 9:
-              return '0 0 15px 0'; // Top-right corner rounded
+              return '0 0 20px 0'; // Top-right corner rounded
           default:
             return '0'; // No corners rounded
         }
@@ -34,7 +34,7 @@ const DropTarget = ({ children , id , size, onPiecePlaced,onclick}) => {
         width: size,
         height: size,
         position: 'relative',
-        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  'yellow' : '#f2ffe6',
+        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  'yellow' : '#ffffcc',
         borderRadius: getBorderRadius(id),
     });
 

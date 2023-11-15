@@ -36,8 +36,8 @@ const MyInterests = () => {
                 <img src={Dog} className="min-w-full min-h-full object-cover" />
             </div>        </div>
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <NoteSticker size='256px' title='IT' text="I have a wide range of interests in IT areas!" />
-            <a href="https://www.linkedin.com/in/kaini-chang//" target="_blank" rel="noopener noreferrer">
+            <NoteSticker size='256px' title='IT' text="I have a wide range of interests in IT areas! It's my career!" />
+            <a href="https://www.linkedin.com/in/kaini-chang/" target="_blank" rel="noopener noreferrer">
                 <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
                     <img className="h-16 w-16 mt-20 mx-auto"  src={Linkedin}/>
                 <p className='font-bold text-customgreen bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
