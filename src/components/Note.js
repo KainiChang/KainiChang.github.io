@@ -5,7 +5,7 @@ function NoteSticker({ title, text,size }) {
     padding: '10px',
     backgroundColor: 'yellow',
     // backgroundColor: '#b1e457',
-
+whiteSpace: 'pre-line',
     width: size,
     height: size,
     borderRadius: '0px',

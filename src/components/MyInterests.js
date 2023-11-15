@@ -11,6 +11,7 @@ import Meetup from '../images/meetup.jpeg';
 import Linkedin from '../images/linkedin.png';
 import Folder from '../images/folder.png';
 import Recyle from '../images/recycle.jpeg';
+import Gardenwork from '../images/gardenwork.jpeg';
 import NoteSticker from './Note';
 import Modal from './Modal';
 const MyInterests = () => {
@@ -75,12 +76,12 @@ const MyInterests = () => {
             <NoteSticker size='256px' title='Networking' text="Enjoy meeting inspiring people via meetups and volunteering" />
         </div>
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <NoteSticker size='256px' title='Fixing' text='Fixing stuff to avoid new purchases ' />
+            <NoteSticker size='256px' title='Fixing&Recycling, Haircutting, Puzzles game...' text='' />
             <div onClick={() => openModal(Recyle)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
                 <img src={Recyle} className="min-w-full min-h-full object-cover" />
             </div>
-            <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
-                <img src={Cat} className="min-w-full min-h-full object-cover" />
+            <div onClick={() => openModal(Gardenwork)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Gardenwork} className="min-w-full min-h-full object-cover" />
             </div>
         </div>
               {/* Modal for displaying enlarged images */}
