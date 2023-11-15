@@ -4,7 +4,7 @@ import PuzzlePiece from "./PuzzlePiece";
 import ResultPuzzle from "./ResultPuzzle";
 
 // Inside your Puzzle.js or equivalent grid component
-const PuzzlesGrid = ({ onPiecePlaced, size,correctPlacements }) => {
+const PuzzlesGrid = ({ onPiecePlaced, size, onclick,correctPlacements }) => {
     // Render the drop targets in a grid layout
     console.log("puzzle grid rendering");
     console.log("puzzle grid size: ", size);
@@ -21,6 +21,7 @@ const PuzzlesGrid = ({ onPiecePlaced, size,correctPlacements }) => {
                     id={index + 1}
                     size={size}
                     onPiecePlaced={onPiecePlaced}
+                    onclick={onclick}
                 >
                     {isPlaced ?
                         <ResultPuzzle pieceId={pieceId}/> :

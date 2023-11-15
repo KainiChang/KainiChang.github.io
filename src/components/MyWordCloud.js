@@ -142,14 +142,14 @@ function MyWordcloud() {
 
   return (
     // <div style={{ width: '100%', height: '100%' , margin: '0 auto' }}>
-    <div className='flex justify-center ' style={{ width: '100%', height: '100%' }}>
+    <div className='flex justify-center  mb-12' style={{ width: '100%', height: '100%' }}>
       <div style={{ width: dimensions.width, height: dimensions.height, display: 'inline-block' }}>
         <ReactWordcloud
         callbacks={callbacks}
         options={options}
         size={[dimensions.width, dimensions.height]}
         words={words}
-        getWordTooltip={() => ''} // Disable default tooltip
+        // getwordtooltip={() => ''} // Disable default tooltip
       />
     </div>
     </div>

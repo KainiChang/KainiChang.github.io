@@ -2,64 +2,60 @@
 import Piece1 from '../images/kaini.png';
 import Piece3 from '../images/kaini3.png';
 const storyPanelsData = [
+
     {
-        id: '1',
-        imgSrc: null,
-        title: 'Navigate One-child policy & Two-track household registration system',
-        description: 'I was happily living in a small village in a rural area of China until I understand what is "algricultural population". Being a healthy girl, I did not suffer from the early birth that caused by medicine effect because my mom failed to hide her second pragnent. Being a super star of academic, I was free to go any school offering scholarship in my homecity, poverty and lack of education resources for algricultural kids did not stop my education. There are Big differences between my life and life of the friends I grew up with. No matter where I came from, I am at the front line of pursuing technology, equalality and democracy.',
+      id: '1',
+      imgSrc: null,
+      title: 'Lucky or Unlucky?',
+      description: 'Officers who worked for the government under the One-child policy were waiting for my death. However, my great mom succeeded in giving an early birth. Luckily, I’m so healthy!'
     },
-    {   
-        id: '2',
-        imgSrc: Piece1 ,
-        title: 'Become an adult at 12',
-        description: 'Even though I live in the domitory of schools from 11 years old, it was one year later after the loss of my father I became mentally strong to remove the rebellious phase from my life. From there, I take the initiative to plan my own life, make desicions at crucial life acrosses with a clear mind. My life was not hard as you may imagine, I have a best mom in the world and I was strong enough to support myself mentally and financially',
-    },
+    // ...
     {
-        id: '3',
-        imgSrc: Piece3 ,
-        title: 'Study changed my fortune',
-        description: 'Without any purpose, I just enjoy study. Not because I clearly know I wanna go to a big world, to earn a life like "city population" have. Just purely enjoy what offered in schools except "history" and "politics". I am the person who always learning and doing the occupants my families do not understand, however, they know I am the advanced one and ask for my advices when they have troubles. My interests guides me to the IT industry, I was working as a senior system analyst in a top company in China, caring and optimizing a system millions people using everyday. My life was totally changed because of my knowledge. That why I am always motived to learn new knowledge and skills.',
+      id: '4',
+      imgSrc: Piece1,
+      title: '9-9-6 Work Experience',
+      description: 'My interests guided me to the IT industry, which later developed into a busy industry in China. I worked as a senior system analyst in a top company, managing and optimizing a system used by millions every day. Working from 9 am to 9 pm, 6 days a week, helped me save money for overseas study, as there was no time to spend it. \n\nA colleague of mine at the giant corporation, after many night shifts, suddenly lay down. He was then diagnosed with coronary heart disease and underwent heart bypass surgery at the age of 25.'
     },
+    // ...
     {
-        id: '4',
-        imgSrc: Piece1 ,
-        title: '9-9-6 work pattern dangered my life',
-        description: 'Living in a developing country which ambitious on its GDP, labor rights are not a concern. In the IT industry of China, working from 9am to 9pm 6 days a week is a default work patern. That means if you can not do it, some else would take your place. People or talent are impossible to be used out. A collegue of mine at the gaient coorperation, who was taking care of the hotline system in a night shift after many, lied down suddenly. he was then dignosed coronary heart disease and had a heart bypass surgery immediately at the age of 25. I was lucky to have a lighter health issue, the sugery for that didn not run well, I had more than 20 bags of blood transfusions. I lay motionless in the hospital bed for nearly a month and lost nearly 8kg. The experience of having tubes inserted all over my body was indeed not comfortable. ' 
+      id: '5',
+      imgSrc: Piece1,
+      title: 'Reborn from Death',
+      description: "My life was slowed down due to a medical accident during COVID. I couldn't stop rethinking my life choices, especially when I was lying motionless, with several tubes inserted into my body and having more than 20 bags of blood transfusions. \n\nI reordered the priorities of my life: wellbeing -> relationships -> diverse experiences -> other stuff."
     },
+    // ...
     {
-        id: '5',
-        imgSrc:  Piece1 ,
-        title: 'Reborn from the death',
-        description: 'Your description for panel 5',
+      id: '6',
+      imgSrc: Piece1,
+      title: 'Thanks to Declining Air Quality',
+      description: "I experienced an extremely difficult time as the first person in my family network to live abroad. I resigned from my prestigious job, persuaded my family and my partner's family, said goodbye to my friends, and my dog. \n\nThe declining air quality in the eastern part of China made me feel less guilty. My partner and my nephews suffered from serial respiratory infections and fevers due to the bad air, which garnered support for our decision to leave."
     },
+    // ...
     {
-        id: '6',
-        imgSrc:  Piece1 ,
-        title: 'Declining air quality',
-        description: 'In the relatively developed eastern part of China, there is no bright sunshine or stars. The cause of my miscarriage was diagnosed as vitamin D deficiency, which is already a common problem of my generation. In winter, it fogs almost every morning. My partner and my nephew had serial respiratory infections and fevers due to the bad air. If you notice the background of some videos taken in China by unoffical media on youtube, you would understand me. One of the reason the photoshop is so popular is it can make the sky more blue and leaves more green',
+      id: '7',
+      imgSrc: Piece1,
+      title: 'Am I in New Zealand?',
+      description: "To ease my family's worries, I told them I was studying in New Zealand and would return after completing my studies. Bearing the time zones in mind, I calculate a fake time every time I talk with them on the phone. \n\nI will find an opportunity to tell them I have never been to New Zealand and that I’m in Australia and plan to stay here forever."
     },
+    // ...
     {
-        id: '7',
-        imgSrc:  Piece1 ,
-        title: 'Plan and move towards better life',
-        description: 'Resignated from the shining job, persuaded my families and my partner family, reviewed my Chinglish, navigated covid, said goodbye to my dog, I experienced an extremly difficuty time as the first person go aboard in the networks of my families. Anyway, I made it and sponored myself to pursue a better career and life with the savings of the years of 9-9-6 work.',
+      id: '8',
+      imgSrc: Piece1,
+      title: 'Survived and Thrived in Australia',
+      description: "Significant improvement in my oral English boosted my confidence. I achieved high distinction in my master's study, surrounded by talented people, and found that I am one of them. Working part-time at Flinders University as a junior system analyst, I found my teammates to be supportive and friendly. With two internship experiences under my belt, I am grateful for the culture of gender and nationality diversity here. \n\nLiving in Botanic Apartment, I consider myself lucky to have such lovely neighbors. Enjoying Adelaide's beautiful outdoors, I am more than happy to live in Australia."
     },
+    // ...
     {
-        id: '8',
-        imgSrc:  Piece1 ,
-        title: 'Survived and Thrived in Australia',
-        description: 'Big change in my oral English gave me lots of confidence. Studying at University of Adelaide, achived high distiction on average, surrounding by all talented people and found myself am one of them. Along with part-time working at Flinders University as a junior system anaylst, my teammates are so supportive and friendly. Adding two internship experiences, I was so grateful the promotion of gender and nationality diversity here. Living in Botanic Apartment, I am so lucky to have the lovely neighours. Enjoying the beatiful outdoor natural of Adelaide, I am so grateful to have the chance to live and study in Australia. ',
-    },
-    {
-        id: '9',
-        imgSrc:  Piece1 ,
-        title: 'Looking forward to the future',
-        description: 'With 5 years post study work visa, I am looking forward to the future. I am so excited to be a part of the IT industry in Australia, to contribute my knowledge and skills to the society, to be a part of the community, to be a part of the country. ',
+      id: '9',
+      imgSrc: Piece1,
+      title: 'Looking Forward to the Future Adventure',
+      description: "With a 5-year post-study work visa in Australia, I am thrilled to be part of the IT industry here, to contribute my knowledge and skills to society, and to integrate into the community and the country. \n\nWould you like to join me on this adventure?"
     }
-];
+  ]
+  
 
 // StoryPanel.js
-const StoryPanel = ({ panelId,close }) => {
+const StoryPanel = ({ panelId,closePanel }) => {
     // Find the panel data by the panelId
     const panelData = storyPanelsData.find(panel => panel.id == panelId);
     console.log("story id: ",panelId);
@@ -69,17 +65,24 @@ const StoryPanel = ({ panelId,close }) => {
         return null; // or some fallback UI
     }
     return (
-        <div className="fixed inset-0 bg-white bg-opacity-75 flex justify-center items-center">
-            <div className="bg-white w-96 md:max-w-3xl p-4 rounded-lg shadow-lg text-center">
+        <div className="fixed inset-0  bg-black bg-opacity-30 flex justify-center items-center">
+            <div className="bg-white m-2 border-t-2 border-lime-500 md:w-200  px-4 py-8 md:p-8 rounded-lg shadow-lg text-center">
             {/* {panelData.imgSrc && <img src={panelData.imgSrc} alt={`Story panel ${panelId}`} className="w-full h-60 mb-4" />} */}
                 <h3 className="text-2xl font-bold mb-2">{panelData.title}</h3>
-                <p className='text-xl text-left'>{panelData.description}</p>
-                <button
-                    onClick={() => {close()}}
-                    className="mt-4 px-4 py-2 bg-lime-500 text-white rounded hover:bg-lime-400 transition duration-300"
+                <p className='text-xl text-left' style={{ whiteSpace: 'pre-line' }}>{panelData.description}</p>
+                {/* <button
+                    onClick={() => {closePanel()}}
+                    className="mt-4 px-8 py-2 hover:bg-lime-500 hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
                 >
                     Close
-                </button>
+                </button> */}
+                <button
+    onClick={() => {closePanel()}}
+    className="mt-4 px-8 py-2 focus:bg-lime-500 hover:bg-lime-500 focus:text-white  hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
+>
+    Close
+</button>
+
             </div>
         </div>
     );

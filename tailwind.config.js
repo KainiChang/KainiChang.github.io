@@ -14,8 +14,9 @@ module.exports = {
       fontFamily: {
         'handlee': ['Handlee', 'cursive'],
       },
-      color: {
-        'lime': '#f2ffe6',
+      colors: {
+        'customlime': '#f2ffe6',
+        'customgreen':'#b1e457',
       }
     },
 

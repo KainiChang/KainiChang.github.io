@@ -1,47 +1,89 @@
-import React from 'react';
-import Piece2 from '../images/kaini.png';
+
+import React, { useState } from 'react';
+import Cat from '../images/cat.jpeg';
+import Dog from '../images/dog.jpeg';
+import Trip from '../images/trip.jpeg';
+import Hiking from '../images/hiking.jpeg';
+import Volunteer from '../images/volunteer.jpeg';
+import Volunteer1 from '../images/volunteer1.jpeg';
+import Volunteer2 from '../images/volunteer2.jpeg';
+import Meetup from '../images/meetup.jpeg';
+import Linkedin from '../images/linkedin.png';
+import Folder from '../images/folder.png';
+import Recyle from '../images/recycle.jpeg';
 import NoteSticker from './Note';
+import Modal from './Modal';
+const MyInterests = () => {
+    const [modalImage, setModalImage] = useState(null);
 
-const interest1 = { 'title': "Pets", 'description': "I love pur babys both dogs a" };
+    const openModal = (imgSrc) => {
+      setModalImage(imgSrc);
+    };
+  
+    const closeModal = () => {
+      setModalImage(null);
+    };
 
-const MyInterests = () => (
+    return (
     <div className='max-w-6xl flex-col items-center justify-center mx-auto'>
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <img src={Piece2} className="h-72 my-4 mx-auto block md:mx-2" />
-            <NoteSticker size='280px' title='Pets' text="I love pur babys both dogs and cats! If I don't control myself, I might look like an insane pet thief!" />
-            <img src={Piece2} className="h-72 my-4 mx-auto block md:mx-2" />
-        </div>
+        <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Cat} className="min-w-full min-h-full object-cover" />
+            </div>            
+            <NoteSticker size='256px' title='Pets' text='I love pur babys both dogs and cats!' />
+            <div onClick={() => openModal(Dog)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Dog} className="min-w-full min-h-full object-cover" />
+            </div>        </div>
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <NoteSticker size='280px' title='IT' text="I have a wide range of interests in IT areas!  Not sure why I'm so 'fraternity' at anything IT stuff that impact human life" />
-            <a href=" https://arrowfit-2f55fec5fe98.herokuapp.com/" target="_blank" rel="noopener noreferrer">
-                <button className='bg-white text-gray py-2 px-4 w-72 h-72 rounded mb-2 mx-1 mx-auto block md:mx-2'>
-                    Gym management
-                </button>
+            <NoteSticker size='256px' title='IT' text="I have a wide range of interests in IT areas!" />
+            <a href="https://www.linkedin.com/in/kaini-chang//" target="_blank" rel="noopener noreferrer">
+                <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
+                    <img className="h-16 w-16 mt-20 mx-auto"  src={Linkedin}/>
+                <p className='font-bold text-customgreen bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
+                    Visit Linkedin
+                </p>
+                </div>
             </a>
-            <a href="https://www.boogieroos.com.au/" target="_blank" rel="noopener noreferrer">
-                <button className='bg-white text-gray py-2 px-4 w-72 h-72  rounded mb-2 mx-1 mx-auto block md:mx-2'>
-                    Kindgarden marketing
-                </button>
+            <a href='https://kainichang.github.io/cv.pdf' download="KainiChang_CV.pdf" target="_blank" rel="noopener noreferrer">
+                <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
+                    <img className="h-16 w-16 mt-20 mx-auto"  src={Folder}/>
+                <p className='font-bold text-customgreen bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
+                    Download CV
+                </p>
+                </div>
             </a>
 
         </div>
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <img src={Piece2} className="h-72 my-4 mx-auto block md:mx-2" />
-            <NoteSticker size='280px' title='Outdoor' text="Traveling, hiking, camping, running, kayaking..." />
-            <img src={Piece2} className="h-72 my-4 mx-auto block md:mx-2" />
+        <div onClick={() => openModal(Hiking)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Hiking} className="min-w-full min-h-full object-cover" />
+            </div>
+            <NoteSticker size='256px' title='Outdoor' text="Traveling, hiking, camping, running, kayaking..." />
+            <div onClick={() => openModal(Trip)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Trip} className="min-w-full min-h-full object-cover" />
+            </div>
         </div>
 
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <img src={Piece2} className="h-72 my-4 mx-auto block md:mx-2" />
-            <img src={Piece2} className="h-72 my-4 mx-auto block md:mx-2" />
-            <NoteSticker size='280px' title='Networking' text="A new interest living in Adelaide, meeting inspiring people via meetups and volunteering" />
+        <div onClick={() => openModal(Volunteer2)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Volunteer2} className="min-w-full min-h-full object-cover" />
+            </div>
+        <div onClick={() => openModal(Volunteer1)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Volunteer1} className="min-w-full min-h-full object-cover" />
+            </div>
 
+            <NoteSticker size='256px' title='Networking' text="Enjoy meeting inspiring people via meetups and volunteering" />
         </div>
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-        <NoteSticker size='280px' title='Fixing' text='fixing, repairing, haircutting  (no dishes!! no laundry!!)' />
-            <NoteSticker size='280px' title='Haircutting' text='fixing, repairing, haircutting  (no dishes!! no laundry!!)' />
-            <NoteSticker size='280px' title='more' text='fixing, repairing, haircutting  (no dishes!! no laundry!!)' />
-
+            <NoteSticker size='256px' title='Fixing' text='Fixing stuff to avoid new purchases ' />
+            <div onClick={() => openModal(Recyle)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Recyle} className="min-w-full min-h-full object-cover" />
+            </div>
+            <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                <img src={Cat} className="min-w-full min-h-full object-cover" />
+            </div>
         </div>
-    </div>);
+              {/* Modal for displaying enlarged images */}
+      <Modal imgSrc={modalImage} onClose={closeModal} />
+    </div>);};
 export default MyInterests;

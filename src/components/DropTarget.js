@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-const DropTarget = ({ children , id , size, onPiecePlaced}) => {
+const DropTarget = ({ children , id , size, onPiecePlaced,onclick}) => {
  
     console.log("drop zone rendered"); // NOT executing
 
@@ -34,16 +34,16 @@ const DropTarget = ({ children , id , size, onPiecePlaced}) => {
         width: size,
         height: size,
         position: 'relative',
-        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  '#ffffcc' : '#f2ffe6',
+        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  'yellow' : '#f2ffe6',
         borderRadius: getBorderRadius(id),
     });
 
     return (
         // ref={drop}
-        <div ref={drop} style={getDropZoneStyle(isOver) }>
+        <button ref={drop} style={getDropZoneStyle(isOver) } onClick={()=>{onclick(id)}}>
             {/* This area represents where the PuzzlePiece can be dropped */}
             {children}
-        </div>
+        </button>
     );
 };
 
