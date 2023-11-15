@@ -12,27 +12,41 @@ import MyWordCloud from './components/MyWordCloud';
 import MyInterests from './components/MyInterests';
 import Reload from './images/reload.png';
 import notes from './images/notes.png';
+import Start from './images/star1.png';
 import { isMobile } from 'react-device-detect'; // or use your own mobile detection
 
-// const HTML5toTouch = {
-//   backends: [
-//     {
-//       backend: HTML5Backend,
-//       transition: MouseTransition,
-//     },
-//     {
-//       backend: TouchBackend, // You may want to pass options to TouchBackend
-//       options: { enableMouseEvents: true }, // Enable if you want to respond to mouse events
-//       preview: true,
-//       transition: TouchTransition,
-//     },
-//   ],
-// };
-// const backend = HTML5Backend;
-
-const backend = isMobile ? TouchBackend : HTML5Backend;
 function App() {
+  const isTouchDevice = () => {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  };
+  // touch device
+  const backend = isTouchDevice() ? TouchBackend : HTML5Backend;
+  const backendOptions = {
+    // Enable mouse events to be interpreted as touch events
+    enableMouseEvents: true,
+  };
 
+  //width of screen
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+  function getCurrentDimension(){
+    return {
+        width: window.innerWidth,
+        height: window.innerHeight
+    }
+  }
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension())
+    }
+    window.addEventListener('resize', updateDimension);
+    
+    return(() => {
+        window.removeEventListener('resize', updateDimension);
+    })
+  }, [screenSize])
+  const isSmallScreen = screenSize.width < 400;
+
+  // piece dragging and story handling
   const [currentPanel, setCurrentPanel] = React.useState(null);
   const [draggedPiece, setDraggedPiece] = useState(null);
   // State to track the correct placement of puzzle pieces
@@ -57,22 +71,17 @@ function App() {
     //if the id has been correctly placed, show the story panel
     if (correctPlacements[panelId]) {
       showStoryPanel(panelId);
-    } else {
-      console.log("want to showing story panel:", panelId);
-      console.log("checked correctly placed:", correctPlacements[panelId]);
-    }
+    } 
   }
   // const size = 100;
 
-  const size = isMobile? 100:130;
+  const size = isSmallScreen? 100:130;
   const closePanel = () => {
     setCurrentPanel(null);
-    console.log("current panel:", currentPanel);
   }
   const onDrag = (pieceId) => {
     setDraggedPiece(pieceId);
   }
-  console.log("dragged and placed correctly", currentPanel);
   const resetGame = () => {
     setCorrectPlacements({
       1: false,
@@ -106,10 +115,14 @@ function App() {
   return (
     <div className="App">
       <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
-        <div className='md:max-w-5xl'>
-          <h1 className="text-4xl italic font-handlee md:text-5xl font-bold text-gray-800 my-6">
+        <div className='md:max-w-5xl flex items-center justify-center'>
+          <img src={Start} className='w-12 h-12 md:mr-2 mx-auto block' />
+          <h1 className="text-4xl italic md:mx-2 font-handlee md:text-5xl font-bold text-gray-800 block my-6 mx-auto">
             Hello friend, I'm Kaini!
-          </h1 ></div></div>
+          </h1 >
+          <img src={Start} className='w-12 h-12 md:ml-2 mx-auto block' />
+          </div>
+          </div>
       <div className="flex items-center justify-center bg-lime-250 bg-opacity-30 p-8">
         <div className='md:max-w-5xl'>
           <h3 className=" text-center text-2xl md:text-3xl text-gray-800 my-4">
@@ -122,12 +135,10 @@ function App() {
               <img src={Reload} className='w-6 h-6 opacity-25 mx-auto' />
             </button>
           )}
-                        <DndProvider backend={backend}>
-
+          <DndProvider backend={backend} options={backendOptions}>
           <div className='mx-auto rounded-md md:flex items-center justify-center'>
           {!isCompleted && 
             <div className="flex flex-1 p-4 justify-center items-center">
-
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
             </div>}
             <div className="flex flex-1 p-4 justify-center items-center">
@@ -143,17 +154,17 @@ function App() {
       </div>
       <div className="text-center py-12 px-2 bg-customlime">
         <h3 className="text-2xl md:text-3xl text-gray-800 mt-4 mb-6">
-          My personality is a mix like the wordcloud:
+        My personality is like the wordcloud:
         </h3>
         <MyWordCloud />
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
-          <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:mr-2 opacity-70'>
+          <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:mr-2 opacity-70'>
             <h1 className='font-bold text-gray-800'>Strength</h1>
-            <p className='text-sm mt-2'>Keep a clear mind under stress, especially handling logic and numbers</p>
+            <p className='text-sm mt-2'>"I maintain a clear mind under stress, particularly when handling logic and numbers."</p>
           </div>
-          <div className='w-2/3 md:w-2/5 h-32 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:ml-2 opacity-70'>
+          <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:ml-2 opacity-70'>
             <h1 className='font-bold text-gray-800'>Weakness</h1>
-            <p className='text-sm mt-2'>I perfer to build relationships that last, not a social butterfly with many casual friends.</p>
+            <p className='text-sm mt-2'>"I prefer to build long-lasting relationships rather than being a social butterfly with many casual acquaintances."</p>
           </div>
         </div>
       </div>
@@ -168,10 +179,10 @@ function App() {
       </div>
       <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
         <div className='text-center p-4 md:max-w-5xl mx-4'>
-          <h3 className="italic font-handlee text-4xl md:text-5xl font-semibold text-gray-800 mt-2 mb-4">
+          <h3 className="italic font-handlee text-3xl md:text-4xl font-semibold text-gray-800 mt-2 mb-4">
             Much appreciated for your time and effort to know me more!
           </h3>
-          <h3 className="italic font-handlee text-4xl md:text-5xl font-semibold text-gray-800 mt-2 mb-4">
+          <h3 className="italic font-handlee text-3xl md:text-4xl font-semibold text-gray-800 mt-2 mb-4">
             Cheers!
           </h3>
         </div>

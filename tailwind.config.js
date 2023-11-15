@@ -13,11 +13,14 @@ module.exports = {
       },
       fontFamily: {
         'handlee': ['Handlee', 'cursive'],
+        'hand': ['Indie Flower', 'handlee'],
       },
       colors: {
         'customlime': '#f2ffe6',
         'customgreen':'#b1e457',
-        'customyellow':'#fdf1b7',
+        'customyellow':'#fdf2b7',
+        'customorange':'#f9d175',
+        'customblue':'#68aaf7',
       }
     },
 

@@ -10,6 +10,7 @@ import Volunteer2 from '../images/volunteer2.jpeg';
 import Meetup from '../images/meetup.jpeg';
 import Linkedin from '../images/linkedin.png';
 import Folder from '../images/folder.png';
+import File from '../images/file.png';
 import Recyle from '../images/recycle.jpeg';
 import Gardenwork from '../images/gardenwork.jpeg';
 import NoteSticker from './Note';
@@ -40,16 +41,16 @@ const MyInterests = () => {
             <a href="https://www.linkedin.com/in/kaini-chang/" target="_blank" rel="noopener noreferrer">
                 <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
                     <img className="h-16 w-16 mt-20 mx-auto"  src={Linkedin}/>
-                <p className='font-bold text-customgreen bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
-                    Visit Linkedin
+                <p className='font-bold text-customblue bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
+                    Linkedin profile
                 </p>
                 </div>
             </a>
-            <a href='https://kainichang.github.io/cv.pdf' download="KainiChang_CV.pdf" target="_blank" rel="noopener noreferrer">
+            <a href='https://kainichang.github.io/KainiChang_CV.pdf' download="KainiChang_CV.pdf" target="_blank" rel="noopener noreferrer">
                 <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
-                    <img className="h-16 w-16 mt-20 mx-auto"  src={Folder}/>
-                <p className='font-bold text-customgreen bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
-                    Download CV<br />
+                    <img className="h-16 w-16 mt-20 mx-auto"  src={File}/>
+                <p className='font-bold text-customorange bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
+                    My CV<br />
                     (more projects)
                 </p>
                 </div>
@@ -77,7 +78,7 @@ const MyInterests = () => {
             <NoteSticker size='256px' title='Networking' text="Enjoy meeting inspiring people via meetups and volunteering" />
         </div>
         <div className="mx-auto rounded-md md:flex items-center justify-center ">
-            <NoteSticker size='256px' title='Fixing&Recycling, Haircutting, Puzzles game...' text='' />
+            <NoteSticker size='256px' title='Fixing & Recycling, Haircutting, Puzzles game, Virtual reality...' text='' />
             <div onClick={() => openModal(Recyle)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
                 <img src={Recyle} className="min-w-full min-h-full object-cover" />
             </div>

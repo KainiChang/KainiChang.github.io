@@ -10,7 +10,7 @@ whiteSpace: 'pre-line',
     height: size,
     borderRadius: '0px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    fontFamily: 'Handlee,  sans-serif',
+    fontFamily: 'hand,  sans-serif',
     fontSize: '16px',
     lineHeight: '1.5',
     position: 'relative', // For absolutely positioned elements inside
@@ -19,8 +19,8 @@ whiteSpace: 'pre-line',
 
   return (
     <div style={stickerStyle} className='mx-auto md:mx-2 my-4'>
-      <h3 className='font-bold text-3xl mt-4 mb-4 text-center'> {title}</h3>
-      <h3 className='font-semibold text-2xl '> {text}</h3>
+      <h3 className='font-bold font-hand text-3xl mt-4 mb-4 text-center'> {title}</h3>
+      <h3 className='font-semibold font-hand text-2xl '> {text}</h3>
 
     </div>
   );
