@@ -160,7 +160,7 @@ function App() {
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
           <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:mr-2 opacity-70'>
             <h1 className='font-bold text-gray-800'>Strength</h1>
-            <p className='text-sm mt-2'>"I maintain a clear mind under stress, particularly when handling logic and numbers."</p>
+            <p className='text-sm mt-2'>"I have adapted to thrive under pressure and stress, maintaining a positive attitude that enables me to enjoy and excel in the face of challenges and new experiences."</p>
           </div>
           <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:ml-2 opacity-70'>
             <h1 className='font-bold text-gray-800'>Weakness</h1>

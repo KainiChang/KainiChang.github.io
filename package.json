@@ -10,6 +10,7 @@
     "npm": "^10.2.3",
     "postcss": "^8.4.31",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-device-detect": "^2.2.3",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
