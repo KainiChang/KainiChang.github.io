@@ -19,7 +19,6 @@ const Puzzle = ({ onDrag, correctPlacements ,size}) => {
               size={pieceSize}
               x={pieceSize * (index % 3)}
               y={pieceSize * Math.floor(index / 3)}
-              image={get}
             />
           );
         }
