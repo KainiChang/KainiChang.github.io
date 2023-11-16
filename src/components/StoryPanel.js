@@ -11,8 +11,8 @@ const storyPanelsData = [
   {
     id: '2',
     imgSrc: null,
-    title: 'Adult or Not?',
-    description: "I’m pretty sure I’ve become an adult after the loss of my father at 12 years old being mentally strong to manage my life.  \n\nSomehow I feel myself am still a kid at the bottom of my heart, being curious and adventurous."
+    title: 'Adult VS Kid',
+    description: "I’m pretty sure I’ve become an adult after the loss of my father at 12 years old being independent enough to manage my life.  \n\nSomehow I feel myself am still a kid at the bottom of my heart, being curious and adventurous."
   },
   {
     id: '3',
@@ -24,7 +24,7 @@ const storyPanelsData = [
     id: '4',
     imgSrc: null,
     title: '9-9-6 Work Experience',
-    description: 'My interests guided me to the IT industry, a busy industry in China. I worked as a senior system analyst in a top company, managing and optimizing a system used by millions every day. Working from 9 am to 9 pm, 6 days a week, helped me save money for overseas study, as there was no time to spend it. \n\nA colleague of mine suddenly lay down at work after many night shifts. He was then diagnosed with coronary heart disease and underwent heart bypass surgery at the age of 25.'
+    description: "My interests guided me to the IT industry, a busy industry in China. I worked as a senior system analyst in a top company, managing and optimizing a system used by millions every day. Working from 9 am to 9 pm, 6 days a week, helped me save money for overseas study, as there was no time to spend it. \n\nA colleague didn't survive, suddenly lay down at work after many night shifts. He was then diagnosed with coronary heart disease and underwent heart bypass surgery at the age of 25. "
   },
   // ...
   {
