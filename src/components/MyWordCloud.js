@@ -83,11 +83,10 @@ const words = [
     { text : 'Even-tempered', value: 650, description: "Being rational, my balanced demeanor brings a sense of stability and harmony, enabling me to navigate life's ups and downs with grace and poise." },
     { text : 'Rational', value: 650, description: "Being rarely emotional, I keep calm and clear-minded." },
     { text : 'Adaptive', value: 600, description: "I embracing changes which bring new experiences and excitements." },
-    { text : 'Empathy', value: 550, description: "Standing on others feet is a natural thing for me." },
+    { text : 'Empathetic', value: 550, description: "Standing on others feet is a natural thing for me." },
     { text : 'Analytical', value: 600, description: "A specialist on logic and numbers." },
     { text : 'Thinker', value: 600, description: "I think deeper and faster" },
     { text : 'Listener', value: 550, description: "Instead of keeping expressing myself, I'd like to listen and considering others' perspective." },
-
   ];
 
 function MyWordcloud() {

@@ -21,6 +21,11 @@ module.exports = {
         'customyellow':'#fdf2b7',
         'customorange':'#f9d175',
         'customblue':'#68aaf7',
+      },
+      animation: {
+        'fade-in': 'fadeIn 1s ease-in-out',
+        'slide-in-left': 'slideInFromLeft 0.5s ease-out',
+        'slide-out-right': 'slideOutToRight 0.5s ease-out'
       }
     },
 

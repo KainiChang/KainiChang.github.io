@@ -129,7 +129,7 @@ function App() {
           <h3 className=" text-center text-2xl md:text-3xl text-gray-800 my-4">
             My stories are behind the puzzles:</h3>
           {!isCompleted ? (
-            <p className='text-customgreen font-bold'>drag & drop into the container</p>) : (
+            <p className='text-customgreen font-bold'>Drag the pieces into the container to assemble.</p>) : (
             <button
               className=" text-gray w-6 h-6"
               onClick={resetGame}>
@@ -176,12 +176,12 @@ function App() {
         <MyWordCloud />
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
           <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:mr-2 opacity-70'>
-            <h1 className='font-bold text-gray-800'>Strength</h1>
-            <p className='text-sm mt-2'>"I have adapted to thrive under pressure and stress, maintaining a positive attitude that enables me to enjoy and excel in the face of challenges and new experiences."</p>
+            <h1 className='font-bold text-gray-800'>Strengths</h1>
+            <p className='text-sm mt-2'>I have adapted to thrive under pressure and stress, maintaining a positive attitude that enables me to enjoy and excel in the face of challenges and new experiences.</p>
           </div>
           <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:ml-2 opacity-70'>
-            <h1 className='font-bold text-gray-800'>Weakness</h1>
-            <p className='text-sm mt-2'>"I prefer to build long-lasting relationships rather than being a social butterfly with many casual acquaintances."</p>
+            <h1 className='font-bold text-gray-800'>Weaknesses</h1>
+            <p className='text-sm mt-2'>My preference for enduring relationships over a wider social network can limit my circle of casual acquaintances.</p>
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@ function App() {
       <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
         <div className='text-center p-4 md:max-w-5xl mx-4'>
           <h3 className="italic font-handlee text-3xl md:text-4xl font-semibold text-gray-800 mt-2 mb-4">
-            Much appreciated for your time and effort to know me more!
+            Much appreciated for your time and effort to know me better!
           </h3>
           <h3 className="italic font-handlee text-3xl md:text-4xl font-semibold text-gray-800 mt-2 mb-4">
             Cheers!
