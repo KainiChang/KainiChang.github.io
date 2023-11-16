@@ -13,6 +13,7 @@ import MyInterests from './components/MyInterests';
 import Reload from './images/reload.png';
 import notes from './images/notes.png';
 import Start from './images/star1.png';
+import CustomDragLayer from './components/CustomDragLayer';
 import { isMobile } from 'react-device-detect'; // or use your own mobile detection
 
 function App() {
@@ -28,10 +29,10 @@ function App() {
 
   //width of screen
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
-  function getCurrentDimension(){
+  function getCurrentDimension() {
     return {
-        width: window.innerWidth,
-        height: window.innerHeight
+      width: window.innerWidth,
+      height: window.innerHeight
     }
   }
   useEffect(() => {
@@ -39,9 +40,9 @@ function App() {
       setScreenSize(getCurrentDimension())
     }
     window.addEventListener('resize', updateDimension);
-    
-    return(() => {
-        window.removeEventListener('resize', updateDimension);
+
+    return (() => {
+      window.removeEventListener('resize', updateDimension);
     })
   }, [screenSize])
   const isSmallScreen = screenSize.width < 400;
@@ -71,11 +72,11 @@ function App() {
     //if the id has been correctly placed, show the story panel
     if (correctPlacements[panelId]) {
       showStoryPanel(panelId);
-    } 
+    }
   }
   // const size = 100;
 
-  const size = isSmallScreen? 100:130;
+  const size = isSmallScreen ? 100 : 130;
   const closePanel = () => {
     setCurrentPanel(null);
   }
@@ -121,8 +122,8 @@ function App() {
             Hello friend, I'm Kaini!
           </h1 >
           <img src={Start} className='w-12 h-12 md:ml-2 mx-auto block' />
-          </div>
-          </div>
+        </div>
+      </div>
       <div className="flex items-center justify-center bg-lime-250 bg-opacity-30 p-8">
         <div className='md:max-w-5xl'>
           <h3 className=" text-center text-2xl md:text-3xl text-gray-800 my-4">
@@ -135,26 +136,42 @@ function App() {
               <img src={Reload} className='w-6 h-6 opacity-25 mx-auto' />
             </button>
           )}
-          <DndProvider backend={backend} options={backendOptions}>
-          <div className='mx-auto rounded-md md:flex items-center justify-center'>
-          {!isCompleted && 
-            <div className="flex flex-1 p-4 justify-center items-center">
+          {!isTouchDevice() ? (<DndProvider backend={backend} options={backendOptions}>
+            <div className='mx-auto rounded-md md:flex items-center justify-center'>
+              {!isCompleted &&
+                <div className="flex flex-1 p-4 justify-center items-center">
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
-            </div>}
-            <div className="flex flex-1 p-4 justify-center items-center">
-              {/* <DndProvider backend={backend}> */}
+                </div>}
+              <div className="flex flex-1 p-4 justify-center items-center">
+                {/* <DndProvider backend={backend}> */}
                 <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-              {/* </DndProvider> */}
+                {/* </DndProvider> */}
+              </div>
+              {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
             </div>
-            {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
-          </div>
-          </DndProvider>
+          </DndProvider>) : (
+            <DndProvider backend={TouchBackend} options={backendOptions}>
+              <CustomDragLayer />
+              <div className='mx-auto rounded-md md:flex items-center justify-center'>
+                {!isCompleted &&
+                  <div className="flex flex-1 p-4 justify-center items-center">
+                    <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
+                  </div>}
+                <div className="flex flex-1 p-4 justify-center items-center">
+                  {/* <DndProvider backend={backend}> */}
+                  <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
+                  {/* </DndProvider> */}
+                </div>
+                {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
+              </div>
+            </DndProvider>
+          )}
 
         </div>
       </div>
       <div className="text-center py-12 px-2 bg-customlime">
         <h3 className="text-2xl md:text-3xl text-gray-800 mt-4 mb-6">
-        My personality is like the wordcloud:
+          My personality is like the wordcloud:
         </h3>
         <MyWordCloud />
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>

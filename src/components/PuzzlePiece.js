@@ -1,66 +1,47 @@
-// // PuzzlePiece.js
-// import React, { useState } from 'react';
-// import { useDrag } from 'react-dnd';
-// import ResultPuzzle from './ResultPuzzle';
-
-// const PuzzlePiece = ({ id, size, x, y, onDrag }) => {
-//     const [position, setPosition] = useState({ x, y }); // Initial position
-//     const [{ isDragging }, drag] = useDrag({
-//         type: 'piece',
-//         item: () => {
-//             onDrag(id);
-//             return { id, size, initialPosition: position };
-//         },
-//         end: (item, monitor) => {
-//             // Call onDrag with null when the drag operation ends
-//             onDrag(null);
-
-//             const dropResult = monitor.getDropResult();
-//             if (dropResult) {
-//                 const delta = monitor.getDifferenceFromInitialOffset();
-//                 if (delta) {
-//                     const newPosition = {
-//                         x: Math.round(item.initialPosition.x + delta.x),
-//                         y: Math.round(item.initialPosition.y + delta.y),
-//                     };
-//                     setPosition(newPosition); // Update position state
-//                 }
-//             }
-//         },
-//         collect: monitor => ({
-//             isDragging: !!monitor.isDragging(),
-//         }),
-//     });
-//     const handleTouchMove = (e) => {
-//         const touch = e.targetTouches[0];
-//         // Calculate the position based on touch point
-//         const newPosition = {
-//             x: Math.round(touch.clientX),
-//             y: Math.round(touch.clientY),
-//         };
-//         // Update the position state
-//         setPosition(newPosition);
-//     };
-    
-//     return (
-//         <div ref={drag}   onTouchMove={handleTouchMove}
-//          style={{ opacity: isDragging ? 0.5 : 1, width: size, height: size }}>
-//             <ResultPuzzle pieceId={id} size={size} />
-//         </div>
-//     );
-// };
-
-// export default PuzzlePiece;
-
 
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import ResultPuzzle from './ResultPuzzle';
+import Piece1 from '../images/kaini.png';
+import Piece2 from '../images/kaini2.png';
+import Piece3 from '../images/kaini3.png';
+import Piece4 from '../images/kaini4.png';
+import Piece5 from '../images/kaini5.png';
+import Piece6 from '../images/kaini6.png';
+import Piece7 from '../images/kaini7.png';
+import Piece8 from '../images/kaini8.png';
+import Piece9 from '../images/kaini9.png';
 
-const PuzzlePiece = ({ id, size, onDrag }) => {
+const getImageSrc = (id) => {
+    switch (id) {
+      case 1:
+        return Piece1;
+      case 2:
+        return Piece2;
+      case 3:
+        return Piece3;
+      case 4:
+        return Piece4;
+      case 5:
+        return Piece5;
+      case 6:
+        return Piece6;
+      case 7:
+        return Piece7;
+      case 8:
+        return Piece8;
+      case 9:
+        return Piece9;
+        
+      default:
+        return null; // or a default image
+    }
+  };
+const PuzzlePiece = ({ id, size }) => {
+    const image = getImageSrc(id);
     const [{ isDragging }, drag] = useDrag(() => ({
         type: 'piece',
-        item: { id },
+        item: { id,image },
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
         }),

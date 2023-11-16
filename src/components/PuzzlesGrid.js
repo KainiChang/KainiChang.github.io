@@ -4,7 +4,7 @@ import PuzzlePiece from "./PuzzlePiece";
 import ResultPuzzle from "./ResultPuzzle";
 
 // Inside your Puzzle.js or equivalent grid component
-const PuzzlesGrid = ({ onPiecePlaced, size, onclick,correctPlacements }) => {
+const PuzzlesGrid = ({ onPiecePlaced, size, onclick,correctPlacements,array }) => {
  const boxSize = 3*size;
     return (
         <div className='grid grid-cols-3 mt-3' style={{ width: boxSize, height: boxSize }}>
