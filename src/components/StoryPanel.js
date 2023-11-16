@@ -6,7 +6,7 @@ const storyPanelsData = [
     id: '1',
     imgSrc: null,
     title: 'Lucky or Unlucky?',
-    description: 'Officers who worked for the government under the One-child policy were waiting for my death. However, my great mom succeeded in giving an early birth. Luckily, I’m so healthy!'
+    description: "My mother gave an successful early birth, despite the government officers worked under One-child polity waiting there anticipated a different outcome. My health was a symbol of life's triumph."
   },
   {
     id: '2',
