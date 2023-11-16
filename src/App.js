@@ -192,7 +192,7 @@ function App() {
             My interests include:
           </h3>
         </div>
-        <MyInterests />
+        <MyInterests isSmallScreen={isSmallScreen}/>
       </div>
       <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
         <div className='text-center p-4 md:max-w-5xl mx-4'>
