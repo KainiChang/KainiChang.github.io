@@ -37,11 +37,26 @@ const getImageSrc = (id) => {
         return null; // or a default image
     }
   };
+  const getBorderRadius = (id) => {
+    switch (id) {
+      case 1:
+        return '20px 0 0 0'; // Top-left corner rounded
+      case 3:
+        return '0 20px 0 0'; // Top-right corner rounded
+        case 7:
+          return '0 0 0 20px'; // Top-left corner rounded
+        case 9:
+          return '0 0 20px 0'; // Top-right corner rounded
+      default:
+        return '0'; // No corners rounded
+    }
+  };
 const PuzzlePiece = ({ id, size }) => {
     const image = getImageSrc(id);
+    const radius = getBorderRadius(id);
     const [{ isDragging }, drag] = useDrag(() => ({
         type: 'piece',
-        item: { id,image },
+        item: { id,image,radius },
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
         }),
