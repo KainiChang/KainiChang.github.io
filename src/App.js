@@ -129,7 +129,7 @@ function App() {
           <h3 className=" text-center text-2xl md:text-3xl text-gray-800 my-4">
             My stories are behind the puzzles:</h3>
           {!isCompleted ? (
-            <p className='text-customgreen font-bold'>Drag the pieces into the container to assemble.</p>) : (
+            <p className='text-customgreen font-bold'>Drag the pieces into the container to assemble</p>) : (
             <button
               className=" text-gray w-6 h-6"
               onClick={resetGame}>
