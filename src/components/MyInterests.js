@@ -55,24 +55,7 @@ const MyInterests = ({ isSmallScreen }) => {
 
     return (
         <div className='max-w-6xl flex-col items-center justify-center mx-auto'>
-            {!isSmallScreen ? (<div className="mx-auto rounded-md md:flex items-center justify-center ">
-                <div onClick={() => openModal(currentDog)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded  animate-fade-in">
-                    <img src={currentDog} className="min-w-full min-h-full object-cover" />
-                </div>
-                <NoteSticker size='256px' title='Pets' text='I love both dogs and cats!' />
-                <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
-                    <img src={Cat} className="min-w-full min-h-full object-cover" />
-                </div>
-            </div>) : (<div className="mx-auto rounded-md md:flex items-center justify-center ">
-                <NoteSticker size='256px' title='Pets' text='I love both dogs and cats!' />
-                <div onClick={() => openModal(currentDog)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded  animate-fade-in">
-                    <img src={currentDog} className="min-w-full min-h-full object-cover" />
-                </div>
-                <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
-                    <img src={Cat} className="min-w-full min-h-full object-cover" />
-                </div>
-            </div>)
-            }
+
 
             <div className="mx-auto rounded-md md:flex items-center justify-center ">
                 <NoteSticker size='256px' title='IT' text="I have a wide range of interests in IT areas! It's my career!" />
@@ -95,15 +78,34 @@ const MyInterests = ({ isSmallScreen }) => {
                 </a>
 
             </div>
+            {!isSmallScreen ? (<div className="mx-auto rounded-md md:flex items-center justify-center ">
+                <div onClick={() => openModal(currentDog)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded  animate-fade-in">
+                    <img src={currentDog} className="min-w-full min-h-full object-cover" />
+                </div>
+                <NoteSticker size='256px' title='Pets' text='I love both dogs and cats!' />
+                <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                    <img src={Cat} className="min-w-full min-h-full object-cover" />
+                </div>
+            </div>) : (<div className="mx-auto rounded-md md:flex items-center justify-center ">
+                <NoteSticker size='256px' title='Pets' text='I love both dogs and cats!' />
+                <div onClick={() => openModal(currentDog)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded  animate-fade-in">
+                    <img src={currentDog} className="min-w-full min-h-full object-cover" />
+                </div>
+                <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                    <img src={Cat} className="min-w-full min-h-full object-cover" />
+                </div>
+            </div>)
+            }
             {!isSmallScreen ? (
                 <div className="mx-auto rounded-md md:flex items-center justify-center ">
                     <div onClick={() => openModal(Hiking)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
                         <img src={Hiking} className="min-w-full min-h-full object-cover" />
                     </div>
-                    <NoteSticker size='256px' title='Outdoor' text={<><span>traveling,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span>kayaking...</span></>} />
                     <div onClick={() => openModal(currentTrip)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded animate-fade-in">
                         <img src={currentTrip} className="min-w-full min-h-full object-cover" />
                     </div>
+                    <NoteSticker size='256px' title='Outdoor' text={<><span>traveling,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span>kayaking...</span></>} />
+
                 </div>) : (
                 <div className="mx-auto rounded-md md:flex items-center justify-center ">
                     <NoteSticker size='256px' title='Outdoor' text={<><span>traveling,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span>kayaking...</span></>} />
@@ -120,11 +122,12 @@ const MyInterests = ({ isSmallScreen }) => {
                     <div onClick={() => openModal(currentVolunteer)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded animate-fade-in">
                         <img src={currentVolunteer} className="min-w-full min-h-full object-cover" />
                     </div>
+                    <NoteSticker size='256px' title='Networking' text="Feel inspired by meeting different people via meetups and volunteering" />
+
                     <div onClick={() => openModal(Volunteer1)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
                         <img src={Volunteer1} className="min-w-full min-h-full object-cover" />
                     </div>
 
-                    <NoteSticker size='256px' title='Networking' text="Feel inspired by meeting different people via meetups and volunteering" />
                 </div>
             ) : (
                 <div className="mx-auto rounded-md md:flex items-center justify-center ">
