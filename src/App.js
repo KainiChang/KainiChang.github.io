@@ -171,7 +171,7 @@ function App() {
       </div>
       <div className="text-center py-12 px-2 bg-customlime">
         <h3 className="text-2xl md:text-3xl text-gray-800 mt-4 mb-6">
-          My personality is like the wordcloud:
+          My personality is like the word cloud:
         </h3>
         <MyWordCloud />
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
