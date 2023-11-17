@@ -23,12 +23,11 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes slideInFromLeft {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+.custom-tooltip .tippy-box {
+  background-color: #f9d175; /* Change to your desired background color */
+  color: #333; /* Optional: Change text color if needed */
 }
 
-@keyframes slideOutToRight {
-  from { transform: translateX(0); opacity: 1; }
-  to { transform: translateX(100%); opacity: 0; }
+.custom-tooltip .tippy-content {
+  font-size: 16px; /* Adjust the font size as needed */
 }

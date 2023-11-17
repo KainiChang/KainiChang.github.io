@@ -115,7 +115,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
+      <div className="flex items-center justify-center bg-lime-300  p-8">
         <div className='md:max-w-5xl flex items-center justify-center'>
           <img src={Start} className='w-12 h-12 md:mr-2 mx-auto block' />
           <h1 className="text-4xl italic md:mx-2 font-handlee md:text-5xl font-bold text-gray-800 block my-6 mx-auto">
@@ -137,30 +137,26 @@ function App() {
             </button>
           )}
           {!isTouchDevice() ? (<DndProvider backend={backend} options={backendOptions}>
-            <div className='mx-auto rounded-md md:flex items-center justify-center'>
+            <div className='mx-auto rounded-md md:flex items-center justify-center '>
               {!isCompleted &&
                 <div className="flex flex-1 p-4 justify-center items-center">
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                 </div>}
-              <div className="flex flex-1 p-4 justify-center items-center">
-                {/* <DndProvider backend={backend}> */}
-                <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-                {/* </DndProvider> */}
+              <div className="flex flex-1 p-4 justify-center items-center ">
+                <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
               </div>
               {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
             </div>
           </DndProvider>) : (
             <DndProvider backend={TouchBackend} options={backendOptions}>
               <CustomDragLayer />
-              <div className='mx-auto rounded-md md:flex items-center justify-center'>
+              <div className='mx-auto rounded-md md:flex items-center justify-center '>
                 {!isCompleted &&
-                  <div className="flex flex-1 p-4 justify-center items-center">
+                  <div className="flex flex-1 p-4 justify-center items-center ">
                     <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                   </div>}
                 <div className="flex flex-1 p-4 justify-center items-center">
-                  {/* <DndProvider backend={backend}> */}
-                  <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-                  {/* </DndProvider> */}
+                  <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
                 </div>
                 {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
               </div>
@@ -169,19 +165,19 @@ function App() {
 
         </div>
       </div>
-      <div className="text-center py-12 px-2 bg-customlime">
+      <div className="text-center py-12 px-2 bg-customtop">
         <h3 className="text-2xl md:text-3xl text-gray-800 mt-4 mb-6">
           My personality is like the word cloud:
         </h3>
         <MyWordCloud />
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
-          <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:mr-2 opacity-70'>
+          <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-2xl shadow-md bg-white mx-auto md:mr-2 border-2 border-customgreen'>
             <h1 className='font-bold text-gray-800'>Strengths</h1>
-            <p className='text-sm mt-2'>I have adapted to thrive under pressure and stress, maintaining a positive attitude that enables me to enjoy and excel in the face of challenges and new experiences.</p>
+            <p className='text-base mt-2'>I have adapted to thrive under pressure and stress, maintaining a positive attitude that enables me to enjoy and excel in the face of challenges and new experiences.</p>
           </div>
-          <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-sm shadow-md bg-white opacity-90 mx-auto md:ml-2 opacity-70'>
+          <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-2xl shadow-md bg-white mx-auto md:ml-2  border-2 border-customorange'>
             <h1 className='font-bold text-gray-800'>Weaknesses</h1>
-            <p className='text-sm mt-2'>My preference for enduring relationships over a wider social network can limit my circle of casual acquaintances.</p>
+            <p className='text-base mt-2'>My preference for enduring relationships over a wider social network can limit my circle of casual acquaintances.</p>
           </div>
         </div>
       </div>
@@ -194,7 +190,7 @@ function App() {
         </div>
         <MyInterests isSmallScreen={isSmallScreen}/>
       </div>
-      <div className="flex items-center justify-center bg-lime-300 bg-opacity-35 p-8">
+      <div className="flex items-center justify-center bg-lime-300 p-8">
         <div className='text-center p-4 md:max-w-5xl mx-4'>
           <h3 className="italic font-handlee text-3xl md:text-4xl font-semibold text-gray-800 mt-2 mb-4">
             Much appreciated for your time and effort to know me better!

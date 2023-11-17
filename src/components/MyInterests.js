@@ -60,7 +60,7 @@ const MyInterests = ({ isSmallScreen }) => {
             <div className="mx-auto rounded-md md:flex items-center justify-center ">
                 <NoteSticker size='256px' title='IT' text="I have a wide range of interests in IT areas! It's my career!" />
                 <a href="https://www.linkedin.com/in/kaini-chang/" target="_blank" rel="noopener noreferrer">
-                    <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
+                    <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customtop">
                         <img className="h-16 w-16 mt-20 mx-auto" src={Linkedin} />
                         <p className='font-bold text-customblue bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
                             Linkedin profile
@@ -68,7 +68,7 @@ const MyInterests = ({ isSmallScreen }) => {
                     </div>
                 </a>
                 <a href='https://kainichang.github.io/KainiChang_CV.pdf' download="KainiChang_CV.pdf" target="_blank" rel="noopener noreferrer">
-                    <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customlime">
+                    <div className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded bg-customtop">
                         <img className="h-16 w-16 mt-20 mx-auto" src={File} />
                         <p className='font-bold text-customorange bg-transparent py-2 px-4  mb-2 mx-1 mx-auto block md:mx-2'>
                             My CV<br />

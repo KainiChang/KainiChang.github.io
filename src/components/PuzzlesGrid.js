@@ -7,7 +7,7 @@ import ResultPuzzle from "./ResultPuzzle";
 const PuzzlesGrid = ({ onPiecePlaced, size, onclick,correctPlacements,array }) => {
  const boxSize = 3*size;
     return (
-        <div className='grid grid-cols-3 mt-3' style={{ width: boxSize, height: boxSize }}>
+        <div className='grid grid-cols-3 mt-3 ' style={{ width: boxSize, height: boxSize }}>
             {
             [...Array(9)].map((_, index) => {
                 const pieceId = index + 1;
@@ -22,7 +22,7 @@ const PuzzlesGrid = ({ onPiecePlaced, size, onclick,correctPlacements,array }) =
                 >
                     {isPlaced ?
                         <ResultPuzzle pieceId={pieceId}/> :
-                        <p className="flex justify-center items-center h-full m-0 text-slate-400 text-xl">+</p>
+                        <p className="flex justify-center items-center h-full m-0 text-customgreen text-xl">+</p>
                     }
                 </DropTarget>
             )})}

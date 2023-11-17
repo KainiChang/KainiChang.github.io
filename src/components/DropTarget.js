@@ -34,7 +34,7 @@ const DropTarget = ({ children , id , size, onPiecePlaced,onclick}) => {
         width: size,
         height: size,
         position: 'relative',
-        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  'yellow' : '#ffffcc',
+        backgroundColor: isOver && draggedItem && draggedItem.id === id ?  '#b1e457' : '#f8fee9',
         borderRadius: getBorderRadius(id),
     });
 

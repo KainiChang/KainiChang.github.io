@@ -117,15 +117,13 @@ function MyWordcloud() {
     onWordMouseOver: (word, event) => {
       const wordElement = event.target;
       if (wordElement) {
-        // Check if tippy instance already exists
         if (!wordElement._tippy) {
-          // Initialize tippy
           tippy(wordElement, {
             content: word.description,
             allowHTML: true,
+            className: 'custom-tooltip' // Add your custom class here
           });
         } else {
-          // Update tippy content dynamically
           wordElement._tippy.setContent(word.description);
         }
       }

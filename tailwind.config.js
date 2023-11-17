@@ -17,10 +17,12 @@ module.exports = {
       },
       colors: {
         'customlime': '#f2ffe6',
-        'customgreen':'#b1e457',
+        'customgreen':'#93ca42',
         'customyellow':'#fdf2b7',
         'customorange':'#f9d175',
         'customblue':'#68aaf7',
+        'customtop':'#f2ffe6',
+        'custommiddle':'#f9f7f3',
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',
