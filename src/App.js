@@ -45,7 +45,7 @@ function App() {
       window.removeEventListener('resize', updateDimension);
     })
   }, [screenSize])
-  const isSmallScreen = screenSize.width < 420;
+  const isSmallScreen = screenSize.width < 440;
 
   // piece dragging and story handling
   const [currentPanel, setCurrentPanel] = React.useState(null);
@@ -76,7 +76,7 @@ function App() {
   }
   // const size = 100;
 
-  const size = isSmallScreen ? 100 : 130;
+  const size = isSmallScreen ? 110 : 130;
   const closePanel = () => {
     setCurrentPanel(null);
   }
@@ -125,7 +125,7 @@ function App() {
         </div>
       </div>
       <div className="flex items-center justify-center bg-lime-250 bg-opacity-30 p-8">
-        <div className='md:max-w-5xl'>
+        <div className='w-full md:max-w-5xl'>
           <h3 className=" text-center text-2xl md:text-3xl text-gray-800 my-4">
             My stories are behind the puzzles:</h3>
           {!isCompleted ? (
@@ -139,10 +139,10 @@ function App() {
           {!isTouchDevice() ? (<DndProvider backend={backend} options={backendOptions}>
             <div className='mx-auto rounded-md md:flex items-center justify-center '>
               {!isCompleted &&
-                <div className="flex flex-1 p-2 justify-center items-center">
+                <div className="flex p-2 justify-center items-center">
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                 </div>}
-              <div className="flex flex-1 p-2 justify-center items-center ">
+              <div className="flex p-4 justify-center items-center ">
                 <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
               </div>
               {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
@@ -152,10 +152,10 @@ function App() {
               <CustomDragLayer />
               <div className='mx-auto rounded-md md:flex items-center justify-center '>
                 {!isCompleted &&
-                  <div className="flex flex-1 p-2 justify-center items-center ">
+                  <div className="flex p-2 justify-center items-center ">
                     <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                   </div>}
-                <div className="flex flex-1 p-2 justify-center items-center">
+                <div className="flex  p-4 justify-center items-center">
                   <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
                 </div>
                 {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
