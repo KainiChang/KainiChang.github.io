@@ -40,7 +40,7 @@ const storyPanelsData = [
   {
     id: '8',
     title: 'Survived and Thrived in Australia',
-    description: "Significant improvement in my oral English boosted my confidence. I achieved high distinction in my master's study, surrounded by talented people, and found that I am one of them. Working part-time at Flinders University as a junior system analyst, I found my teammates to be supportive and friendly. With two internship experiences under my belt, I am grateful for the culture of gender and nationality diversity here. \n\nLiving in Botanic Apartment, I consider myself lucky to have such lovely neighbors. Enjoying Adelaide's beautiful outdoors, I am more than happy to live in Australia."
+    description: "Significant improvement in my oral English boosted my confidence. I achieved high distinction in my master's study, surrounded by talented people, and found that I am one of them. \n\nLiving in Botanic Apartment, I consider myself lucky to have such lovely neighbors. Working part-time at Flinders University as a junior system analyst, adding two internship experiences, I am grateful for the supportive peers and the culture of gender and nationality diversity."
   },
   {
     id: '9',
@@ -64,7 +64,7 @@ const StoryPanel = ({ panelId, closePanel }) => {
       <div className="bg-white m-2 border-t-2 border-lime-500 md:w-1/2  px-4 py-8 md:p-8 rounded-lg shadow-lg text-center z-20">
         {/* {panelData.imgSrc && <img src={panelData.imgSrc} alt={`Story panel ${panelId}`} className="w-full h-60 mb-4" />} */}
         <h3 className="text-2xl font-bold mb-2">{panelData.title}</h3>
-        <p className='text-xl text-left' style={{ whiteSpace: 'pre-line' }}>{panelData.description}</p>
+        <p className='sm:text-base md:text-xl text-left' style={{ whiteSpace: 'pre-line' }}>{panelData.description}</p>
         {/* <button
                     onClick={() => {closePanel()}}
                     className="mt-4 px-8 py-2 hover:bg-lime-500 hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
