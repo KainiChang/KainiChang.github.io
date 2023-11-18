@@ -60,8 +60,8 @@ const StoryPanel = ({ panelId, closePanel }) => {
     return null; // or some fallback UI
   }
   return (
-    <div className="fixed inset-0  bg-black bg-opacity-30 flex justify-center items-center z-20">
-      <div className="bg-white m-2 border-t-2 border-lime-500 md:w-1/2  px-4 py-8 md:p-8 rounded-lg shadow-lg text-center z-20">
+    <div className="fixed inset-0 p-2 bg-black bg-opacity-30 flex justify-center items-center z-20">
+      <div className="bg-white border-t-2 border-lime-500 md:w-1/2  px-2 py-8 md:p-8 rounded-lg shadow-lg text-center z-20">
         {/* {panelData.imgSrc && <img src={panelData.imgSrc} alt={`Story panel ${panelId}`} className="w-full h-60 mb-4" />} */}
         <h3 className="text-2xl font-bold mb-2">{panelData.title}</h3>
         <p className='sm:text-base md:text-xl text-left' style={{ whiteSpace: 'pre-line' }}>{panelData.description}</p>
