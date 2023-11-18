@@ -45,7 +45,7 @@ function App() {
       window.removeEventListener('resize', updateDimension);
     })
   }, [screenSize])
-  const isSmallScreen = screenSize.width < 400;
+  const isSmallScreen = screenSize.width < 415;
 
   // piece dragging and story handling
   const [currentPanel, setCurrentPanel] = React.useState(null);
@@ -139,7 +139,7 @@ function App() {
           {!isTouchDevice() ? (<DndProvider backend={backend} options={backendOptions}>
             <div className='mx-auto rounded-md md:flex items-center justify-center '>
               {!isCompleted &&
-                <div className="flex flex-1 p-4 justify-center items-center">
+                <div className="flex flex-1 p-2 justify-center items-center">
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                 </div>}
               <div className="flex flex-1 p-4 justify-center items-center ">
