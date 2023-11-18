@@ -82,12 +82,12 @@ const MyInterests = ({ isSmallScreen }) => {
                 <div onClick={() => openModal(currentDog)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded  animate-fade-in">
                     <img src={currentDog} className="min-w-full min-h-full object-cover" />
                 </div>
-                <NoteSticker size='256px' title='Pets' text='I love both dogs and cats!' />
+                <NoteSticker size='256px' title='Pets' text='So much love to give to dogs and cats!' />
                 <div onClick={() => openModal(Cat)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
                     <img src={Cat} className="min-w-full min-h-full object-cover" />
                 </div>
             </div>) : (<div className="mx-auto rounded-md md:flex items-center justify-center ">
-                <NoteSticker size='256px' title='Pets' text='I love both dogs and cats!' />
+                <NoteSticker size='256px' title='Pets' text='So much love to give to dogs and cats!' />
                 <div onClick={() => openModal(currentDog)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded  animate-fade-in">
                     <img src={currentDog} className="min-w-full min-h-full object-cover" />
                 </div>
