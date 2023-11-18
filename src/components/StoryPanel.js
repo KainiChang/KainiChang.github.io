@@ -61,10 +61,10 @@ const StoryPanel = ({ panelId, closePanel }) => {
   }
   return (
     <div className="fixed inset-0 px-2 bg-black bg-opacity-30 flex justify-center items-center z-20">
-      <div className="bg-white border-t-2 border-lime-500 sm:w-full md:w-1/2 px-4 py-8 md:p-8 rounded-lg shadow-lg text-center z-20">
+      <div className=" box-sizing-border-box bg-white border-t-2 border-lime-500 w-full md:w-1/2 px-4 py-8 md:p-8 rounded-lg shadow-lg text-center z-20">
         {/* {panelData.imgSrc && <img src={panelData.imgSrc} alt={`Story panel ${panelId}`} className="w-full h-60 mb-4" />} */}
         <h3 className="text-2xl font-bold mb-2">{panelData.title}</h3>
-        <p className='sm:text-base md:text-xl text-left' style={{ whiteSpace: 'pre-line' }}>{panelData.description}</p>
+        <p className='text-base md:text-xl text-left' style={{ whiteSpace: 'pre-line' }}>{panelData.description}</p>
         {/* <button
                     onClick={() => {closePanel()}}
                     className="mt-4 px-8 py-2 hover:bg-lime-500 hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
