@@ -4,7 +4,7 @@ import PuzzlePiece from './PuzzlePiece';
 const Puzzle = ({ onDrag, correctPlacements ,size}) => {
   const pieceSize = size; // Example fixed size
   const pieceIds = [1, 8, 6, 4, 9, 3, 2, 7, 5]; // Array of piece IDs
-  const boxSize = 3*pieceSize;
+  const boxSize = 3*pieceSize+8;
   return (
     <div className="grid grid-cols-3 gap-1 items-center justify-center " style={{height:boxSize, width:boxSize}}>
       {pieceIds.map((pieceId, index) => {

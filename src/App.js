@@ -45,7 +45,7 @@ function App() {
       window.removeEventListener('resize', updateDimension);
     })
   }, [screenSize])
-  const isSmallScreen = screenSize.width < 415;
+  const isSmallScreen = screenSize.width < 420;
 
   // piece dragging and story handling
   const [currentPanel, setCurrentPanel] = React.useState(null);
@@ -142,7 +142,7 @@ function App() {
                 <div className="flex flex-1 p-2 justify-center items-center">
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                 </div>}
-              <div className="flex flex-1 p-4 justify-center items-center ">
+              <div className="flex flex-1 p-2 justify-center items-center ">
                 <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
               </div>
               {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
@@ -152,10 +152,10 @@ function App() {
               <CustomDragLayer />
               <div className='mx-auto rounded-md md:flex items-center justify-center '>
                 {!isCompleted &&
-                  <div className="flex flex-1 p-4 justify-center items-center ">
+                  <div className="flex flex-1 p-2 justify-center items-center ">
                     <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                   </div>}
-                <div className="flex flex-1 p-4 justify-center items-center">
+                <div className="flex flex-1 p-2 justify-center items-center">
                   <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
                 </div>
                 {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
