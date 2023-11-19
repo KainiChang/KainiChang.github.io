@@ -2,7 +2,7 @@ import React from 'react';
 import PuzzlePiece from './PuzzlePiece';
  
 const Puzzle = ({ onDrag, correctPlacements ,size}) => {
-  const pieceSize = size-4; // Example fixed size
+  const pieceSize = size; // Example fixed size
   const pieceIds = [1, 8, 6, 4, 9, 3, 2, 7, 5]; // Array of piece IDs
   const boxSize = 3*pieceSize+8;
   return (

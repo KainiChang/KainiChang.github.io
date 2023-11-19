@@ -76,7 +76,7 @@ function App() {
   }
   // const size = 100;
 
-  const size = isSmallScreen ? 110 : 130;
+  const size = isSmallScreen ? 100 : 130;
   const closePanel = () => {
     setCurrentPanel(null);
   }
@@ -115,7 +115,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="flex items-center justify-center bg-lime-300  p-8">
+      <div className="flex items-center justify-center bg-lime-300 px-2 py-8">
         <div className='md:max-w-5xl flex items-center justify-center'>
           <img src={Start} className='w-12 h-12 md:mr-2 mx-auto block' />
           <h1 className="text-4xl italic md:mx-2 font-handlee md:text-5xl font-bold text-gray-800 block my-6 mx-auto">
@@ -124,12 +124,12 @@ function App() {
           <img src={Start} className='w-12 h-12 md:ml-2 mx-auto block' />
         </div>
       </div>
-      <div className="flex items-center justify-center bg-lime-250 bg-opacity-30 p-8">
+      <div className="flex items-center justify-center py-8">
         <div className='w-full md:max-w-5xl'>
-          <h3 className=" text-center text-2xl md:text-3xl text-gray-800 my-4">
+          <h3 className=" text-center text-2xl md:text-3xl text-gray-800 p-4 pb-2">
             My stories are behind the puzzles:</h3>
           {!isCompleted ? (
-            <p className='text-customgreen font-bold'>Drag the pieces into the container to assemble</p>) : (
+            <p className='text-customgreen font-bold px-8 pb-8'>Drag the pieces into the container to assemble</p>) : (
             <button
               className=" text-gray w-6 h-6"
               onClick={resetGame}>
@@ -137,7 +137,7 @@ function App() {
             </button>
           )}
           {!isTouchDevice() ? (<DndProvider backend={backend} options={backendOptions}>
-            <div className='mx-auto rounded-md md:flex items-center justify-center '>
+            <div className='mx-auto rounded-md md:flex items-center justify-center mb-4'>
               {!isCompleted &&
                 <div className="flex p-2 justify-center items-center">
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
@@ -150,7 +150,7 @@ function App() {
           </DndProvider>) : (
             <DndProvider backend={TouchBackend} options={backendOptions}>
               <CustomDragLayer />
-              <div className='mx-auto rounded-md md:flex items-center justify-center '>
+              <div className='mx-auto rounded-md md:flex items-center justify-center mb-4'>
                 {!isCompleted &&
                   <div className="flex p-2 justify-center items-center ">
                     <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
