@@ -45,7 +45,7 @@ function App() {
       window.removeEventListener('resize', updateDimension);
     })
   }, [screenSize])
-  const isSmallScreen = screenSize.width < 440;
+  const isSmallScreen = screenSize.width < 450;
 
   // piece dragging and story handling
   const [currentPanel, setCurrentPanel] = React.useState(null);
