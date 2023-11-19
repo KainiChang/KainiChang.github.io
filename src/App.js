@@ -76,7 +76,7 @@ function App() {
   }
   // const size = 100;
 
-  const size = isSmallScreen ? 100 : 130;
+  const size = isSmallScreen ? 90 : 130;
   const closePanel = () => {
     setCurrentPanel(null);
   }
@@ -137,29 +137,25 @@ function App() {
             </button>
           )}
           {!isTouchDevice() ? (<DndProvider backend={backend} options={backendOptions}>
-            <div className='mx-auto rounded-md md:flex items-center justify-center mb-4'>
+            <div className='mx-auto rounded-md flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 mb-4'>
               {!isCompleted &&
-                <div className="flex p-2 justify-center items-center">
-                  <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
-                </div>}
-              <div className="flex p-4 justify-center items-center ">
-                <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-              </div>
+                <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
+              }
+              <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
               {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
             </div>
+
           </DndProvider>) : (
             <DndProvider backend={TouchBackend} options={backendOptions}>
               <CustomDragLayer />
-              <div className='mx-auto rounded-md md:flex items-center justify-center mb-4'>
+              <div className='mx-auto rounded-md flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 mb-4'>
                 {!isCompleted &&
-                  <div className="flex p-2 justify-center items-center ">
-                    <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
-                  </div>}
-                <div className="flex  p-4 justify-center items-center">
-                  <PuzzlesGrid  onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-                </div>
+                  <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
+                }
+                <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
                 {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
               </div>
+
             </DndProvider>
           )}
 
@@ -173,8 +169,8 @@ function App() {
         <div className='md:max-w-5xl mt-16 md:flex items-center justify-center  mx-auto'>
           <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-2xl shadow-md bg-white mx-auto md:mr-2 border-2 border-customgreen'>
             <h1 className='font-bold text-gray-800'>Strengths</h1>
-            <p className='text-base mt-2 text-left'>I thrive on challenges, enjoy the excitements and my accomplishments.<br/> 
-            I have unwavering focus remained long and strong."</p>
+            <p className='text-base mt-2 text-left'>I thrive on challenges, enjoy the excitements and my accomplishments.<br />
+              I have unwavering focus remained long and strong."</p>
           </div>
           <div className='w-2/3 md:w-2/5 my-3 py-3 px-8 rounded-2xl shadow-md bg-white mx-auto md:ml-2  border-2 border-customorange'>
             <h1 className='font-bold text-gray-800'>Weaknesses</h1>
@@ -189,7 +185,7 @@ function App() {
             My interests include:
           </h3>
         </div>
-        <MyInterests isSmallScreen={isSmallScreen}/>
+        <MyInterests isSmallScreen={isSmallScreen} />
       </div>
       <div className="flex items-center justify-center bg-lime-300 p-8">
         <div className='text-center p-4 md:max-w-5xl mx-4'>
