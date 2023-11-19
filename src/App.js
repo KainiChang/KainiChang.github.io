@@ -142,7 +142,7 @@ function App() {
                 <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
               }
               <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-              {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
+              {/* {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />} */}
             </div>
 
           </DndProvider>) : (
@@ -153,7 +153,6 @@ function App() {
                   <Puzzle size={size} onDrag={onDrag} correctPlacements={correctPlacements} />
                 }
                 <PuzzlesGrid onPiecePlaced={onPiecePlaced} size={size} correctPlacements={correctPlacements} onclick={checkAndShowStoryPanel} />
-                {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
               </div>
 
             </DndProvider>
@@ -161,6 +160,7 @@ function App() {
 
         </div>
       </div>
+
       <div className="text-center py-12 px-2 bg-customtop">
         <h3 className="text-2xl md:text-3xl text-gray-800 mt-4 mb-6">
           My personality is like the word cloud:
@@ -201,6 +201,8 @@ function App() {
         <p className='text-xl text-white mx-auto my-1 md:mr-2 font-semibold'>Designed by Kaini Chang</p>
         <p className='text-xl text-white mx-auto my-1 md:ml-2  font-semibold'>Developed by Kaini Chang</p>
       </div>
+      {currentPanel && <StoryPanel panelId={currentPanel} closePanel={closePanel} />}
+
     </div>
   );
 }

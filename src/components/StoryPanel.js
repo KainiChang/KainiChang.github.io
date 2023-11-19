@@ -49,7 +49,20 @@ const storyPanelsData = [
   }
 ]
 
-
+const modalStyle = {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  width: '100%',
+  height: '100%',
+  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  zIndex: 1000, // Make sure this is higher than other elements
+  display: 'flex',
+  alignItems: 'center', // Center the content vertically
+  justifyContent: 'center', // Center the content horizontally
+};
 // StoryPanel.js
 const StoryPanel = ({ panelId, closePanel }) => {
   // Find the panel data by the panelId
@@ -60,24 +73,16 @@ const StoryPanel = ({ panelId, closePanel }) => {
     return null; // or some fallback UI
   }
   return (
-    <div className="fixed inset-0 px-2 bg-black bg-opacity-30 flex justify-center items-center z-20">
-      <div className="box-border bg-white border-t-2 border-lime-500 md:w-1/2 px-4 py-8 md:p-8 rounded-lg text-center z-20">
-        {/* {panelData.imgSrc && <img src={panelData.imgSrc} alt={`Story panel ${panelId}`} className="w-full h-60 mb-4" />} */}
+    <div style={modalStyle} >
+      <div className="box-border bg-white border-t-2 border-lime-500 md:w-1/2 mx-2 px-4 py-8 md:p-8 rounded-lg text-center z-20">
         <h3 className="text-2xl font-bold mb-2">{panelData.title}</h3>
         <p className='text-base md:text-xl text-left' style={{ whiteSpace: 'pre-line' }}>{panelData.description}</p>
-        {/* <button
-                    onClick={() => {closePanel()}}
-                    className="mt-4 px-8 py-2 hover:bg-lime-500 hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
-                >
-                    Close
-                </button> */}
         <button
           onClick={() => { closePanel() }}
           className="mt-4 px-8 py-2 active:bg-lime-500 hover:bg-lime-500 active:text-white hover:text-white rounded border-lime-500 border-2 bg-white text-lime-500 transition duration-300"
         >
           Close
         </button>
-
       </div>
     </div>
   );
