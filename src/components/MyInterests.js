@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Cat from '../images/cat.jpeg';
 import Dog from '../images/dog.jpg';
 import Dog2 from '../images/dog.jpeg';
-import Trip2 from '../images/other.jpg';
 import Trip from '../images/trip2.jpg';
 import Hiking from '../images/trip1.jpg';
+import Car from '../images/car.jpeg';
+import Kayak from '../images/kayak.jpeg';
 import Volunteer from '../images/volunteer.jpg';
 import Volunteer1 from '../images/volunteer1.jpeg';
 import Volunteer2 from '../images/volunteer2.jpeg';
@@ -30,11 +31,13 @@ const MyInterests = ({ isSmallScreen }) => {
     };
 
     const dogs = [Dog, Dog2];
-    const trips = [Trip, Trip2];
+    const trips = [Trip, Kayak];
     const volunteers = [Volunteer2, Volunteer];
+    const outdoor = [Car,Hiking];
     const others = [VR, GardenWork];
 
     const [currentDog, setCurrentDog] = useState(dogs[0]);
+    const [currentOutdoor, setCurrentOutdoor] = useState(trips[0]);
     const [currentTrip, setCurrentTrip] = useState(trips[0]);
     const [currentVolunteer, setCurrentVolunteer] = useState(volunteers[0]);
     const [currentOther, setCurrentOther] = useState(others[0]);
@@ -42,6 +45,7 @@ const MyInterests = ({ isSmallScreen }) => {
     useEffect(() => {
         // Set up an interval to change the image
         const intervalId = setInterval(() => {
+            setCurrentOutdoor(current => (current === outdoor[0] ? outdoor[1] : outdoor[0]));
             setCurrentDog(current => (current === dogs[0] ? dogs[1] : dogs[0]));
             setCurrentTrip(current => (current === trips[0] ? trips[1] : trips[0]));
             setCurrentVolunteer(current => (current === volunteers[0] ? volunteers[1] : volunteers[0]));
@@ -55,7 +59,6 @@ const MyInterests = ({ isSmallScreen }) => {
 
     return (
         <div className='max-w-6xl flex-col items-center justify-center mx-auto'>
-
 
             <div className="mx-auto rounded-md md:flex items-center justify-center ">
                 <NoteSticker size='256px' title='IT' text="I have a wide range of interests in IT areas! It's my career!" />
@@ -98,8 +101,8 @@ const MyInterests = ({ isSmallScreen }) => {
             }
             {!isSmallScreen ? (
                 <div className="mx-auto rounded-md md:flex items-center justify-center ">
-                    <div onClick={() => openModal(Hiking)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
-                        <img src={Hiking} className="min-w-full min-h-full object-cover" />
+                    <div onClick={() => openModal(currentOutdoor)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                        <img src={currentOutdoor} className="min-w-full min-h-full object-cover" />
                     </div>
                     <div onClick={() => openModal(currentTrip)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded animate-fade-in">
                         <img src={currentTrip} className="min-w-full min-h-full object-cover" />
@@ -109,8 +112,8 @@ const MyInterests = ({ isSmallScreen }) => {
                 </div>) : (
                 <div className="mx-auto rounded-md md:flex items-center justify-center ">
                     <NoteSticker size='256px' title='Outdoor' text={<><span>traveling,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span>kayaking...</span></>} />
-                    <div onClick={() => openModal(Hiking)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
-                        <img src={Hiking} className="min-w-full min-h-full object-cover" />
+                    <div onClick={() => openModal(currentOutdoor)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
+                        <img src={currentOutdoor} className="min-w-full min-h-full object-cover" />
                     </div>
                     <div onClick={() => openModal(currentTrip)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded animate-fade-in">
                         <img src={currentTrip} className="min-w-full min-h-full object-cover" />

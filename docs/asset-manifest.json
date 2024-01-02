@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.54b69d63.css",
-    "main.js": "/static/js/main.f544de27.js",
+    "main.js": "/static/js/main.5ba3febd.js",
     "static/js/787.5135fc50.chunk.js": "/static/js/787.5135fc50.chunk.js",
     "static/media/recycle.jpeg": "/static/media/recycle.22da8686405c88d56395.jpeg",
     "static/media/vr.png": "/static/media/vr.7c826e48a2f8b21e4b7c.png",
@@ -10,11 +10,12 @@
     "static/media/meetup.jpeg": "/static/media/meetup.90110a83298c6bd1f4a7.jpeg",
     "static/media/cat.jpeg": "/static/media/cat.b3189ffa7f27cf848cfc.jpeg",
     "static/media/volunteer1.jpeg": "/static/media/volunteer1.e9c5573a69f3b282e0e6.jpeg",
+    "static/media/car.jpeg": "/static/media/car.2ee8e058ed963bd16f03.jpeg",
     "static/media/gardenwork.jpeg": "/static/media/gardenwork.772f1c69fabddc021d51.jpeg",
     "static/media/trip2.jpg": "/static/media/trip2.f4c676133356a18bf18f.jpg",
     "static/media/volunteer.jpg": "/static/media/volunteer.2e8332b9a81f8e0d0fb4.jpg",
     "static/media/trip1.jpg": "/static/media/trip1.c9c59b601318d66557fe.jpg",
-    "static/media/other.jpg": "/static/media/other.e73cc167064fd23541fc.jpg",
+    "static/media/kayak.jpeg": "/static/media/kayak.0af1315e1f788ab74199.jpeg",
     "static/media/kaini4.png": "/static/media/kaini4.289f1aa1924cfe0ebb90.png",
     "static/media/kaini9.png": "/static/media/kaini9.8d2cf9757a1ea4e9b891.png",
     "static/media/kaini5.png": "/static/media/kaini5.8f9bac22d8feba0f71be.png",
@@ -30,11 +31,11 @@
     "static/media/file.png": "/static/media/file.751acec4b7a9aafb4741.png",
     "index.html": "/index.html",
     "main.54b69d63.css.map": "/static/css/main.54b69d63.css.map",
-    "main.f544de27.js.map": "/static/js/main.f544de27.js.map",
+    "main.5ba3febd.js.map": "/static/js/main.5ba3febd.js.map",
     "787.5135fc50.chunk.js.map": "/static/js/787.5135fc50.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.54b69d63.css",
-    "static/js/main.f544de27.js"
+    "static/js/main.5ba3febd.js"
   ]
 }
