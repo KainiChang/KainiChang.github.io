@@ -13,8 +13,8 @@ whiteSpace: 'pre-line',
     fontFamily: 'hand,  sans-serif',
     fontSize: '16px',
     lineHeight: '1.5',
-    position: 'relative', // For absolutely positioned elements inside
-    overflow: 'hidden' // In case of overflow
+    position: 'relative', 
+    overflow: 'hidden'
   };
 
   return (
