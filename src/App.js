@@ -170,7 +170,7 @@ function App() {
           <div className='w-4/5 md:w-2/5 my-3 py-3 px-8 rounded-2xl shadow-md bg-white mx-auto md:mr-2 border-2 border-customgreen'>
             <h1 className='font-bold text-gray-800'>Strengths</h1>
             <p className='text-base mt-2 text-left'>I thrive on challenges, enjoy the excitements and my accomplishments.<br />
-              I have unwavering focus remained long and strong."</p>
+              I have unwavering focus remained long and strong.</p>
           </div>
           <div className='w-4/5 md:w-2/5 my-3 py-3 px-8 rounded-2xl shadow-md bg-white mx-auto md:ml-2  border-2 border-customorange'>
             <h1 className='font-bold text-gray-800'>Weaknesses</h1>
