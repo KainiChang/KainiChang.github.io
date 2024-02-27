@@ -107,11 +107,11 @@ const MyInterests = ({ isSmallScreen }) => {
                     <div onClick={() => openModal(currentTrip)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded animate-fade-in">
                         <img src={currentTrip} className="min-w-full min-h-full object-cover" />
                     </div>
-                    <NoteSticker size='256px' title='Outdoor' text={<><span>traveling,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span>kayaking...</span></>} />
+                    <NoteSticker size='256px' title='Outdoor' text={<><span>kayaking,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span> 4WD... </span></>} />
 
                 </div>) : (
                 <div className="mx-auto rounded-md md:flex items-center justify-center ">
-                    <NoteSticker size='256px' title='Outdoor' text={<><span>traveling,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span>kayaking...</span></>} />
+                    <NoteSticker size='256px' title='Outdoor' text={<><span>kayaking,</span><br/><span> hiking, </span><br/><span>camping,</span><br/><span> running, </span><br/><span> 4WD... </span></>} />
                     <div onClick={() => openModal(currentOutdoor)} className="h-64 w-64 my-4 mx-auto block md:mx-2 overflow-hidden rounded">
                         <img src={currentOutdoor} className="min-w-full min-h-full object-cover" />
                     </div>
